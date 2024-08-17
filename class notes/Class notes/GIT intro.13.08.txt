@@ -1,0 +1,76 @@
+
+08-13-2024 GIT Intro
+
+GIT: Global Information Tracker
+  -it allows programmer to work together on a project collaboratively
+  -it stores our project using a hosting platform with all its versions 
+
+
+Hosting platforms: GitHub, GitLab, Bitbucket, Azure DevOps and many more.
+GitHub: by individuals to create public projects and market themselves
+
+
+VCS: Version Control System 
+
+Git is VCS.
+Git is distributed VCS ()
+
+Centralized VCS: we dont prefer this, when server is down we can't push our changes
+Distributed VCS we have a local copy of the server repo and can keep working 
+even though there is an issue with the server
+
+
+SSH KEY
+It is special type of authentication used instead of user and password
+it is more secure and use private-public key pairs
+Public is shared with hosting apps while private is in your local
+
+ssh-keygen  -simpliest ssh set up
+
+
+HOW TO LINK AND PUSH A NEW PROJECT FROM LOCAL TO REMOTE
+
+1. Create a local repo (on your machine)
+2. Create a remote repo (on GitHub. GitLab, Bitbucket)
+3. Initialize the local repo with GIT 
+  git init 
+4. Link local repo with remote using SSH commands
+  git remote add origin <URL>
+5. Make some changes 
+6. Check the status 
+  git status 
+7. Track the changes - Stage them 
+  git add fileName 
+  git add .
+8. Commit the changes with a meaningful message 
+9. Push the changes to remote repo 
+  git push --set-upstream origin master
+  git push -u origin master 
+  git push
+
+
+
+
+
+GIT COMMANDS 
+  git init
+  git remote add origin <URL>
+  git add .
+  git commit -m "message"
+  git push 
+  git push -u origin master
+  git push --set-upstream origin master
+LINUX COMMANDS 
+  cd 
+  ls 
+  mkdir
+NODE COMMANDS 
+  node -v 
+  node fileName.js
+NPM (Node Package Manager) COMMANDS 
+  npm init 
+NPX (Node Package Executor) COMMANDS
+  npx cypress open
+
+
+

@@ -1,0 +1,52 @@
+
+falsy values
+  false
+   0
+   ''
+   null
+   undefined
+   NaN
+
+   Number object is more complex than primitive numbers
+    -it is a built-in object
+    -it has it's own properties and functions
+
+     Properties:
+   MAX_VALUE
+   MIN_VALUE
+   MAX_SAFE_INTEGER
+   MIN_SAFE_INTEGER
+   POSITIVE INFINITY
+   NEGATIVE INFINITY
+   NaN
+   EPSILON
+
+
+property:what it has
+function: what it does
+
+
+
+property = state = field = instant = variable
+function = method = behaviour
+
+javascript provides us some global functions you ca invoke without referencing 
+
+ isNaN()
+parseFloat()
+parseInt()
+isFinite()
+
+
+
+
+
+
+
+
+
+
+
+
+
+

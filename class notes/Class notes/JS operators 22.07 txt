@@ -1,0 +1,93 @@
+
+ -operators
+
+ recap
+ +, -, /, *, **, %, ++, --,
+
+
+   comparison operator
+  -all the comparison operators return a boolean
+let x = 5,  y = 10, z = '5',
+
+console.log(x == z);  true
+console.log (x == z);    true
+console.log (x === z);   false
+
+
+true equals 1
+false equals 0
+
+LOGICAL operators - all of them give a boolean result. true or false
+
+   && logical and
+   || logical or
+   ! logical not
+
+
+ 3 > 1 $$ 1 > 10      - false
+true && true   -true
+true && false   -false
+false && false    -false
+
+valid username && valid password   -true
+     
+     ||  -OR operator
+
+1 === 1 || 1 = 1 || !false         true
+ 2 == 3 || 5 < 10                  true
+1 != 1 || 2 > 5                    false
+
+ -when you use  &&  with 2 expressions, both of them need to be true to  get a true.
+  -when u have || used with two expressions, the only way to get false is if both of them are false.
+
+
+
+!(3 > && !true) && 4 != '5'   false
+!(true && false) && 5 != '5'
+!false && 5 != '5'
+true && false 
+ false
+
+
+  falsy -always considered as false
+
+  0 is considered to be false
+ ''  (empty string)
+ null is falsy 
+ undefined
+ NaN
+
+any other values apart from falsy ones are considered truthy (true)
+
+
+
+Compiled languages C++, C#, Java
+    -strict, more syntax rules
+
+
+Interpreted languages JS 
+   -more flexible and evaluates expressions more humanly
+
+
+NOT OPERATOR
+
+!false     -true
+
+  Nullish coalescing operator 
+
+
+null vs undefined
+
+null = absence of data
+undefined = declared but not assign any value
+
+
+JS has a built-in Number object, it has many useful properties and functions
+
+   propeties: information abut the object (what is has)
+   functions: behaviours of the object   (what it does)
+
+
+
+
+

@@ -1,0 +1,59 @@
+29/7  JS FUNCTIONS
+
+function: method and behaviour of an object-template-class-prototype
+         -is a block of code we execute for a task
+
+  {} - it's a block
+
+
+REUSABLE:  one of the biggest advantage of creating functions
+   Breaking down your program into manageable pieces.
+
+   We'll give meaningful indentifiers for functions
+
+
+CREATING A FUNCTION - points tp comsider whem creatimng a function
+
+ 1. Task - what it does
+ 2. Give it a meaningful funcName3
+ 3. Parameters or arguments
+ 4. Return type or void - what it returns if it's a return type method
+ 5.static or non-static
+
+If a method is static it is called with it's object
+   Math.max()
+    Number.isInteger()
+
+    NON-STATIC
+  'Hello'.toUpperCase()
+
+function funcName(arg1, arg2, arg3) {
+    // this is the block of the code
+  
+}
+
+funcName();
+
+void: do not return any value
+return-type: these methods return something
+
+
+let fullname =  'john Doe';
+
+const words = fullname.split(' '); // [ 'john', 'Doe' ]
+
+
+
+
+
+
+
+
+
+we are batch-10
+I like apple
+
+ First word always starts with 0 and ends before the first space
+Last word always start with the last space and goes untill the end.
+
+

@@ -1,0 +1,53 @@
+
+
+
+
+let str = 'John';
+
+//if-else//
+
+if(condition) {
+    //if block
+
+}
+else {
+
+    // else block
+}
+
+//if-else if-else///
+
+else if(condition) {
+   // if block
+
+}
+else {
+ //block
+
+}
+
+///nested if-else
+
+
+
+if(weekend) {
+    if(school) {
+        //go to school
+    }
+} if else {
+
+
+}
+  //leisure
+
+
+
+
+
+
+RULES
+
+ -''else block'' or ''else if blocks'' cannot be used without if blocks
+ -should always start with if
+ -else block is optional
+

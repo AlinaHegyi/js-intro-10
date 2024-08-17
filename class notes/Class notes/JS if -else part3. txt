@@ -1,0 +1,40 @@
+
+ RECAP frim conditional statements
+
+- if-else: control flow or conditional statements
+  -if works with a condition and off of the condition, there will be different blocks to execute
+
+
+
+ternary
+ -condition ? expression1 : expression2;
+
+
+let day = 'monday';
+if(day === 'monday') {
+    console.log('Go to work');
+}
+
+ //FINDING IF A NUMBER IS EVEN OR ODD WITHOUT A FUNCTION
+
+let num = Math.floor(Math.random() * 10); // 
+
+ if(num % 2 ===0) {
+    console.log('EVEN');
+ }
+ else {
+    console.log('ODD');
+ }
+
+
+ //FINDING IF A NUMBER IS EVEN OR ODD with A FUNCTION
+
+ function evenOdd(num) {
+ if(num % 2 ===0) {
+     return 'EVEN';
+ }
+ else {
+    return 'ODD';
+  }
+ }
+

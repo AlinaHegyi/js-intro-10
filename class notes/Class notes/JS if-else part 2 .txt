@@ -1,0 +1,68 @@
+
+-Recap If-Else statements
+
+-Control flow or conditional statements
+-Used to run or execute different blocks of codes based on condition
+-It checks a condition which always evaluates to true or false in order to decide what block to be executed
+-There will be only one block executed unless there are nested if-elses.
+
+
+
+
+SYNTAX  
+
+   if (condition) {
+     //..your code here
+   }
+   else {
+    //.. your code here
+   }
+
+
+
+TERNARY: is a common approach used for simple if-else statements
+
+condition ? expression1 : expression2
+-if condition is true, expression1 will be executed
+-if condition is false, expression2 eill be executed
+
+
+
+LADDER IF-ELSE IF Statements
+
+
+let num = _;
+
+if(num > 0) {
+    console.log('POSITIVE');
+}
+else if(num < 0) {
+  console.log('NEGATIVE);
+}
+else {
+    console.log('NEUTRAL');
+};
+
+
+
+NESTED IF-ELSE statements
+
+
+
+
+
+REDUNDAND CODE - UNNECESSARY CODE THAT DOESNT DO ANYTHING
+
+
+
+
+
+
+
+
+
+
+
+
+
+

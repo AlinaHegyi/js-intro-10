@@ -52,8 +52,6 @@ mix[1].slice(0, 2); // 'Go'
 
 console.log(mix[0].toFixed(2)); // 10.54
 
-const numbers = [ 5, 10, 15, 7 ]; 
-
 
 
 

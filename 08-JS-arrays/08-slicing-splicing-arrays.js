@@ -53,12 +53,6 @@ cities.splice(4, 1); // ['Rome']
 console.log(cities); // [ 'Chicago', 'LA', 'Miami', 'Paris', 'Berlin' ]
 
 // Remove some elements and add new ones instead 
-cities.splice(1, 2, 'Des Plaines', 'Porto', 'Brugge'); // ['LA', 'Miami']
+cities.splice(1, 2, 'Des Plaines', 'Porto', 'Brugge'); 
 
 console.log(cities); // [ 'Chicago', 'Des Plaines', 'Porto', 'Brugge', 'Paris', 'Berlin' ]
-
-
-
-
-
-

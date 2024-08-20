@@ -19,7 +19,7 @@ console.log(names); //[ 'Alex', 'John', 'Mariia' ]
 const numbers = [10, 20, 30];
 console.log(numbers); // [10, 20, 30]
 
-//adding elements at the beginning of the Array
+//adding elements at the begining of the Array
  numbers.unshift(99);//
  console.log(numbers);//[ 99, 10, 20, 30 ]
 

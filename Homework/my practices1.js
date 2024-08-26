@@ -489,7 +489,7 @@ if (number === 1) console.log('3 POINTS')
     else console.log('0 POINT');
 
 
-    // SWITCH
+    // SWITCH solution
  switch(number) {
    case 1: console.log('3 POINTS');
      break;
@@ -501,8 +501,14 @@ if (number === 1) console.log('3 POINTS')
  }
 
 
+    
+    
+    
+   
+    
 
-console.log("3" * "5" >= 15 && true == 1 && "   " == false && "" === false);
+
+
 
 
 

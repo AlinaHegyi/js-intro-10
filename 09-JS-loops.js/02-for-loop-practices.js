@@ -94,7 +94,8 @@ for(let i = 0; i < s.length; i++) {
 console.log(countO); // 3
 
 
-// Output all the odd numbers from 1 to Random Number (between 10 and 20) (both inclusive) -> 1 3 5 7 9 ….
+// Output all the odd numbers from 1 to Random Number (between 10 and 20) 
+//(both inclusive) -> 1 3 5 7 9 ….
 let r1 = getRandomNumber(10, 20);
 
 console.log(`The random number is ${r1}`);
@@ -129,7 +130,8 @@ console.log(prod);
 
 
 /*
-Print all the numbers between 2 random numbers in the range of 1 to 10 (both inclusive) in ascending order
+Print all the numbers between 2 random numbers in the range of 1 to 10
+ (both inclusive) in ascending order
 ran1 ran2
 7, 5    -> 5 6 7
 4, 8    -> 4 5 6 7 8

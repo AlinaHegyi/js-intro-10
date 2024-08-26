@@ -1,4 +1,4 @@
-// Write a JavaScript program to output Hello World! 1000000 times.
+// Write a JavaScript program to output Hello World! 10 times.
 
 for(let i = 1; i <= 10; i++) {
     console.log('Hello World!');

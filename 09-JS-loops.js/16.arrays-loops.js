@@ -40,4 +40,29 @@ for(const city of cities) {
 console.log(citiesWithLength6OrMore);
 
 
-// Find all the cities that has i or I in it -> [ 'Berlin', 'Chicago', 'Kyiv', 'Istanbul' ]
+// Find all the cities that has i or I in it -> 
+//[ 'Berlin', 'Chicago', 'Kyiv', 'Istanbul' ]const cities = ['Berlin', 'New York', 'Chicago', 'Istanbul', 'Paris', 'Rome'];
+
+const cities2 = ['Berlin', 'New York', 'Chicago', 'Istanbul', 'Paris', 'Rome'];
+
+/*
+for (let i = 0; i < cities2.length; i++) {
+
+    if (cities2[i].includes('i') || cities2[i].includes('I')) {
+
+        citiesWithI.push(cities2[i]);
+    }
+}
+
+console.log(citiesWithI);
+ */
+  //for of loop 
+const citiesWithI = [];
+
+for(const city of cities) {
+  if(city.toLowerCase().includes('i')) citiesWithI.push(city);
+}
+
+console.log(citiesWithI); // [ 'Berlin', 'Chicago', 'Kyiv', 'Istanbul' ]
+
+

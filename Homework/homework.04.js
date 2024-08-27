@@ -79,9 +79,6 @@ let num = i; let square = num * num;
 console.log(`The square of ${num} is ${square}`);
 }
 
-
-
-
 console.log('\n---------------TASK05---------------\n');
 
 /* Requirement:
@@ -114,25 +111,16 @@ For example:
 0! (by convention) is defined as 1.
 */
 
-let num = getRandomNumber(1, 10)
+let num = getRandomNumber(1, 10);
 console.log(num);
 
-let factorial;
+let factorial = 1;
 
-for ( let i = 1; i <= 10; i++){
-  
+for ( let i = 1; i <= num; i++){
+   factorial *= i;
  
 }
 console.log(factorial);
-
-
-
-
-
-
-
-
-
 
 console.log('\n---------------TASK07---------------\n');
 /*
@@ -214,9 +202,9 @@ true
 */
 
 const cartoons = ['Scooby Doo', 'Snoopy', 'Blue', 'Pluto', 'Dino', 'Sparky'];
- console.log(cartoons);
 
  for (const name of cartoons){
+  console.log(cartoons);
    console.log(cartoons.includes('Pluto'));
    break;
  }
@@ -236,54 +224,221 @@ THEN:
 Expected Result:
 [ 'Azrael', 'Garfield', 'Sylvester', 'Tom' ]
 false
-
-
-
-
 */
 
+const arrCats = ['Garfield', 'Tom', 'Sylvester', 'Azrael'];
+
+console.log(arrCats.sort()); 
+console.log(arrCats.includes('Garfield') && arrCats.includes('Felix'));
 
 
 
 console.log('\n---------------TASk11---------------\n');
+/*
+Requirement:
+-Create an array that stores numbers below
+10.5, 20.75, 70, 80, 15.75
 
+THEN:
+-Output the entire array
+-Ouput each element
 
+Expected Result:
+[ 10.5, 20.75, 70, 80, 15.75 ]
+10.5
+20.75
+70
+80
+15.75
+*/
+ const numbers = [ 10.5, 20.75, 70, 80, 15.75 ];
+  console.log(numbers);
 
+  for( let i = 0; i < numbers.length; i++){
+    console.log(numbers[i]);
+  }
 
 
 console.log('\n---------------TASK12---------------\n');
+/*
+Requirement:
+-Create an array that stores objects below.
+Pen, notebook, Book, paper, bag, pencil, Ruler
+
+THEN:
+-Output the entire array.
+-Output how many elements starts with 'B' or 'P', ignoring cases.
+-Output how many elements has 'book' or 'pen' partial strings, ignoring cases.
+
+Expected Result:
+['Pen', 'notebook', 'Book', 'paper', 'bag', 'pencil', 'Ruler' ]
+Elements starting with 'B' or 'P' = 5
+Elements having 'book' or 'pen' = 4 
+*/
+const array = [ 'Pen', 'notebook', 'Book', 'paper', 'bag', 'pencil', 'ruler' ];
+console.log(array);
+
+let countBP = 0;
+
+for (let i = 0; i < array.length; i++) {
+  let element = array[i];
+   if (element[0].toUpperCase() === 'B' || element[0].toUpperCase() === 'P') {
+        countBP++;
+    }
+}
+console.log("Elements starting with 'B' or 'P' =", countBP);
 
 
+let countBookPen = 0;
 
-
+for (let i = 0; i < array.length; i++){
+  let word = array[i];
+  if(word.toLowerCase().includes('book') || word.toLowerCase().includes('pen')){
+    countBookPen++;
+}
+}
+console.log("Elements having 'book' or 'pen' = ", countBookPen);
 
 
 console.log('\n---------------TASK13---------------\n');
+/*Requirement:
+-Create an array that stores numbers below.
+3, 5, 7, 10, 0, 20, 17, 10, 23, 56, 78
+
+THEN:
+-Output the entire array
+-Output how many elements are more than 10
+-Output how many elements are less than 10
+-Output how many elements are 10
+
+Expected Result:
+[ 3, 5, 7, 10, 0, 20, 17, 10, 23, 56, 78 ]
+Elements that are more than 10 = 5
+Elements that are less than 10 = 4
+Elements that are 10 = 2
+
+*/
+const numArray = [ 3, 5, 7, 10, 0, 20, 17, 10, 23, 56, 78 ];
+ console.log(numArray);
+
+let count1 = 0;
+let count2 = 0;
+let count3 = 0;
 
 
 
+ for (const num of numArray) {
+  if( num > 10) count1++;
+  else if (num < 10) count2++;
+  else if (num === 10) count3++;
+ }
+
+console.log('Elements that are more than 10 =', count1);
+console.log('Elements that are less than 10 =', count2);
+console.log('Elements that are 10 =', count3);
 
 
 console.log('\n---------------TASK14---------------\n');
+/*
+Requirement:
+-Create 2 arrays that stores numbers below.
+First array-> 		[ 5, 8, 13, 1, 2 ]
+Second array -> 	[ 9, 3, 67, 1, 0 ]
 
+THEN:
+-Output both arrays
+–Then, create a new array that will take the greatest value of same index from
+ first 2 arrays and output the third array as well.
 
+Expected Result:
+1st array is =  [ 5, 8, 13, 1, 2 ]
+2nd array is = [ 9, 3, 67, 1, 0 ]
+3rd array is =  [ 9, 8, 67, 1, 2 ]
+
+*/
+const firstArray = [ 5, 8, 13, 1, 2 ];
+const secondArray = [ 9, 3, 67, 1, 0 ];
+
+console.log('1st array is =', firstArray);
+console.log('2nd array is =', secondArray);
+
+const thirdArray = [];
+
+for(i = 0; i < firstArray.length; i++) {
+
+ if(firstArray[i] > secondArray[i]) {
+  thirdArray.push(firstArray[i]);
+} else 
+thirdArray.push(secondArray[i]);
+}
+
+console.log('3rd array is =', thirdArray);
 
 
 
 console.log('\n---------------TASK15---------------\n');
 
+/*
+Requirement:
+Write a function named as firstDuplicate() which takes an array argument and returns 
+the first duplicated number in the array when invoked.
+NOTE: Make your code dynamic that works for any array and return -1 
+if there are no duplicates in the array. 
+For two elements to be considered as duplicated, value and data types of the elements must be same.
 
+Examples:
+firstDuplicate([ 3, 7, 10, 0, 3, 10 ])		-> 3
+firstDuplicate([ 5, 7, 7, 0, 5, 10 ])		-> 5
+firstDuplicate([ 5, '5', 3, 7, 4 ])		-> -1
+firstDuplicate([ 123, 'abc', '123', 3, 'abc' ])	-> 'abc'
+firstDuplicate([ 1, 2, 3])			-> -1
+firstDuplicate([ 'foo', 'abc', '123', 'bar’ ]) 	-> -1
 
+*/
+
+function firstDuplicate(array) {
+     let notDuplicate =[];
+
+      for(i = 0; i < array.length; i++){
+      if (notDuplicate.includes(array[i])){
+         return array[i];
+      }
+      else {
+      notDuplicate.push(array[i]);
+      } 
+    }  
+      return -1;
+}
+
+console.log(firstDuplicate([ 5, 7, 7, 0, 5, 10 ])); // 7
+console.log(firstDuplicate([ 123, 'abc', '123', 3, 'abc' ])); // abc
+console.log(firstDuplicate([ 3, 7, 10, 0, 3, 10 ])); // 3
+console.log(firstDuplicate([ 'foo', 'abc', '123', 'bar' ])); // -1
+console.log(firstDuplicate([ 1, 2, 3, 4, ])); // -1
 
 
 console.log('\n---------------TASK16---------------\n');
+/*
+Write a function named as getDuplicates() which takes an array argument 
+and returns all the duplicated elements in the array when invoked.
 
+NOTE: Make your code dynamic that works for any array and return empty array 
+if there are no duplicates in the array. For two elements to be considered as duplicated,
+ value and data types of the elements must be same.
 
-
-
-
+Examples:
+getDuplicates([ 0, -4, -7, 0, 5, 10, 45, -7, 0 ])		-> [ 0, -7 ]
+getDuplicates([ 1, 2, 5, 0, 7 ])			-> [ ]
+getDuplicates(['A', 'foo', '12’ , 12, 'bar', 'a', 'a', 'foo' ])	-> [ 'foo', 'a’ ]
+getDuplicates([ 'foo', '12' , 12, 'bar', 'a' ])		-> [ ]
+*/
 
 console.log('\n---------------TASK17---------------\n');
+
+
+
+
+
 
 
 

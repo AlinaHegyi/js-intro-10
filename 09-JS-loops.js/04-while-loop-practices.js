@@ -27,6 +27,7 @@ while(i <= 50) {
 // }
 
 // Count all the even numbers between 1 and 10 (both inclusive) -> 5
+
 console.log('\n----------for-loop solution----------\n');
 let countE1 = 0;
 
@@ -36,7 +37,10 @@ for(let i = 1; i <= 10; i++) {
 
 console.log(countE1); // 5
 
+
+
 console.log('\n----------while-loop solution----------\n');
+
 let j = 1;
 let countE2 = 0;
 

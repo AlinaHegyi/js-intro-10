@@ -417,6 +417,29 @@ console.log(firstDuplicate([ 'foo', 'abc', '123', 'bar' ])); // -1
 console.log(firstDuplicate([ 1, 2, 3, 4, ])); // -1
 
 
+// Bilal solution
+function getDuplicates(arr){
+  let dup = []
+  let container = []
+
+  for(let ele of arr){
+      if(!container.includes(ele)) container.push(ele)
+      else if(!dup.includes(ele)) dup.push(ele)
+  }
+  return dup;
+}
+
+
+function getDuplicates(arr){
+  let dup = []
+  for(let i = 0; i<=arr.length - 2; i++){
+
+      if(arr.includes(arr[i], i+1) && !dup.includes(arr[i])) dup.push(arr[i])
+  }
+  return dup;
+}
+
+
 console.log('\n---------------TASK16---------------\n');
 /*
 Write a function named as getDuplicates() which takes an array argument 
@@ -475,27 +498,20 @@ reverseStringWords("Hello") 		-> "olleH"
 reverseStringWords("") 			-> ""
 reverseStringWords("    ") 		-> ""
 */
-
 function reverseStringWords(str){
-  let words = str.split(' ');
-  let  reverseArr = [];
+  let words = str.trim().split(' ')
 
- for (let i = 0; i < words.length; i++){
-     let word = words[i];
-     let reversedWord = '';
-
-   for (let j = word.length - 1; j >= 0; j--){
-     reversedWord += word[j]; 
- }
-  reverseArr.push(reversedWord);
-}
-return reverseArr.join(' ');
+  for( let i = 0; i < words.length; i++){
+    words[i] = words[i].split('').reverse().join('')
+  }
+return words.join(' ');
 }
 
-console.log(reverseStringWords("Hello World") );		
-console.log(reverseStringWords("I like JavaScript"));
-console.log(reverseStringWords(""));		
-console.log(reverseStringWords("    "));
+console.log(reverseStringWords("Hello World") );		// olleH dlroW
+console.log(reverseStringWords("I like JavaScript")); // I ekil tpircSavaJ
+console.log(reverseStringWords(""));		// ''
+console.log(reverseStringWords("    ")); //
+
 
 console.log('\n---------------TASK18---------------\n');
 /*
@@ -557,7 +573,31 @@ function getMultipleOf5(num1, num2) {
    numArray.push(i)
  }
 } 
-return numArray.sort((a, b) => a - b);
+if (num1 > num2) return multipleOf5.reverse();
+
+}
+
+
+
+console.log(getMultipleOf5(3, 17)); // [ 5, 10, 15 ]
+console.log(getMultipleOf5(23, 5)); // [ 5, 10, 15, 20 ] ** unsure how to fix this
+console.log(getMultipleOf5(5, 5)); // [ 5 ]
+console.log(getMultipleOf5(2, 4));// [ ]
+
+// another way to solve
+
+function getMultipleof5(num1, num2) {
+  let multipleOf5 = [];
+ if (num1 > num2){
+ for( let i = num1; i >= num2; i--){
+  if (i % 5 === 0) multipleOf5.push(i)
+ }
+ }
+ else {
+  for ( let i = num2; i <= num1; i++){
+
+  }
+ }
 }
 
 console.log(getMultipleOf5(3, 17)); // [ 5, 10, 15 ]
@@ -565,6 +605,22 @@ console.log(getMultipleOf5(23, 5)); // [ 5, 10, 15, 20 ] ** unsure how to fix th
 console.log(getMultipleOf5(5, 5)); // [ 5 ]
 console.log(getMultipleOf5(2, 4));// [ ]
 
+// solution Bilal
+function getMultipleOf5 (num1, num2){
+  let multipleOf5 = [];
+
+  for(let i = Math.min(num1,num2); i <= Math.max(num1,num2); i++){
+      if(i % 5 === 0) multipleOf5.push(i)
+  }
+
+  return num1 > num2 ? multipleOf5.reverse() : multipleOf5;
+}
+
+
+console.log(getMultipleOf5(3, 17))
+console.log(getMultipleOf5(23, 5))
+console.log(getMultipleOf5(5, 5))
+console.log(getMultipleOf5(2, 4))
 
 
 console.log('\n---------------TASK20---------------\n');
@@ -590,7 +646,7 @@ fizzBuzz(9, 6)	-> "Fizz | 7 | 8 | Fizz"
 
 function fizzBuzz(n1, n2) {
   let storeArray = [];
-   
+  
   let min = Math.min(n1, n2);
   let max = Math.max(n1, n2);
  
@@ -616,9 +672,24 @@ console.log(fizzBuzz(5, 5));
 console.log(fizzBuzz(9, 6));
 
 
+// another way. Bilal
 
+const fizzBuzz = (num1, num2) => {
+  const arr = [];
+  for (let i = Math.min(num1, num2); i <= Math.max(num1, num2); i++) {
+      let str = '';
+      if (i % 3 === 0) str += 'Fizz';
+      if (i % 5 === 0) str += 'Buzz';
+      if (str === '') str = i.toString();
+      arr.push(str);
+  }
+  return (arr.join(' | '));
+}
 
-
+console.log(fizzBuzz(13, 18));
+console.log(fizzBuzz(12, 5));
+console.log(fizzBuzz(5, 5));
+console.log(fizzBuzz(9, 6));
 
 
 

@@ -1,6 +1,34 @@
 
  //////////LOOPS/////ARRAYS///////
+/*
+Requirement:
+Write a function named as firstDuplicate() which takes an array argument and returns 
+the first duplicated number in the array when invoked.
+NOTE: Make your code dynamic that works for any array and return -1 
+if there are no duplicates in the array. 
+For two elements to be considered as duplicated,
+ value and data types of the elements must be same.
 
+Examples:
+firstDuplicate([ 3, 7, 10, 0, 3, 10 ])		-> 3
+firstDuplicate([ 5, 7, 7, 0, 5, 10 ])		-> 5
+firstDuplicate([ 5, '5', 3, 7, 4 ])		-> -1
+firstDuplicate([ 123, 'abc', '123', 3, 'abc' ])	-> 'abc'
+firstDuplicate([ 1, 2, 3])			-> -1
+firstDuplicate([ 'foo', 'abc', '123', 'bar’ ]) 	-> -1
+
+*/
+
+ function firstDuplicate(arr) {
+
+   for (let i = 0; i <= arr.length - 1; i++) {
+       for (let j = 1; j <= arr.length - 1; j++) {
+           if (i === j) continue;
+           if (arr[i] === arr[j]) return arr[i]; 
+       }
+   }
+   return -1;
+}
 
 
 //check if  ''hello'' contains vowels without using the includes function
@@ -25,97 +53,180 @@ for( i = 1; i <= 100; i++){
 // exercises
 
 //1. For Loop Exercises  
-/*
-	1.	Print Numbers 1 to 10
-	2.	Sum of Numbers 1 to 100
-	3.	Print Multiples of 5 Up to 100
-	4.	Create a Pattern   •	Create a pattern with asterisks (*). 
-    For example:
-     *
-     **
-     ***
-     ****
-     *****
-
-*/
 
 
+///1 Print Numbers 1 to 10
+ for ( let i = 1; i <= 10; i++){
+   console.log(i);
+ }
+
+//2.	Sum of Numbers 1 to 100
+let sum = 0;
+for ( let i = 1; i <= 100; i++){
+   sum += i;
+}
+console.log(sum);
 
 
+//	3.	Print Multiples of 5 Up to 100
 
-
-
-
-
+for( let i = 5; i <= 100; i++){
+    if ( i % 5 === 0) console.log(i);
+}
  /*
+
+
 2. While Loop Exercises
 
-	1.	Print Numbers 1 to 10
-	2.	Sum of Numbers 1 to 100
-	3.	Count Down from 10 to 1
-	4.	Find the First Number Greater than 50 Divisible by 7
 
-*/
+*/	//	Print Numbers 1 to 10
+ let i = 1;
+while (i <= 10) {
+    console.log(i) 
+      i++;
+   }
+
+// 	2.	Sum of Numbers 1 to 100
+let sum1 = 0;
+ i = 1;
+while (i <= 100) {
+ sum1 += i;
+ i++;
+}
+console.log(sum1); //5050
+
+// 3.	Count Down from 10 to 1
+
+ i = 10;
+while (i >= 1){
+   console.log(i);
+   i--;
+}
+//4.	Find the First Number Greater than 50 Divisible by 7
+
+  j = 50;
+
+ while (j >= 50) {
+   if(j % 7 === 0) {
+      console.log(j); 
+      break;
+   }
+   j++;
+ }
+  //
 
 
 
+// 3. Do-While Loop Exercises
+
+	// 1.	Print Numbers 1 to 10
+  let k = 1;
+ do {
+   console.log(k);
+   k++;
+ }
+ while(k <= 10);
+
+	// 2.	Sum of Numbers 1 to 100
+ let sumNum = 0;
+  i = 1;
+  do {sumNum += i;
+   i++;
+  } while(i <= 100);
+
+console.log(sumNum);// 5050
 
 
 
-
-
-
+	// 3.	Print Even Numbers Between 1 and 20
+ 
+  i = 1;
+  do { if (i % 2 === 0) console.log(i);
+   i++;
+  }
+  while(i <= 20);
 
 /*
-3. Do-While Loop Exercises
 
-	1.	Print Numbers 1 to 10
-	2.	Sum of Numbers 1 to 100
-	3.	Print Even Numbers Between 1 and 20
-	4.	Prompt User Until They Enter “yes”
-	•	Use prompt to get user input until they type “yes”.
-*/
-
-
-/*
-Here are some exercises to help you practice and get comfortable with array methods in JavaScript:
 ### 1. **Sum of Array Elements**
    - **Task**: Write a function that takes an array of numbers and returns the sum of all the numbers.
-   - **Hint**: Use the `.reduce()` method.
-   ```javascript
    const numbers = [1, 2, 3, 4, 5];
-   // Your code here
-   ```
+  */
+   function sumOfNum(arr) {
+      let sum = 0;
+   
+      for(let i = arr[0]; i <= arr.length ; i++){
+       sum += i;
+      }
+       return sum;
+   }
+
+
+console.log(sumOfNum([ 1, 2, 3, 4, 5 ])); // 15
+
+/*
+   
 ### 2. **Find the Largest Number**
    - **Task**: Write a function that takes an array of numbers and returns the largest number.
-   - **Hint**: You can use `.reduce()` or the spread operator with `Math.max`.
-   ```javascript
    const numbers = [3, 67, 15, 92, 29];
-   // Your code here
+*/
+
+function findLargest(arr){
+   let largest = Math.max(...arr);
+   return largest;
+   }
+
+console.log(findLargest([3, 67, 15, 87, 92, 29])); //92
+
+/*
+
    ```
-### 3. **Filter Even Numbers**
-   - **Task**: Write a function that takes an array of numbers and returns a new array containing only the even numbers.
+# 3. **Filter Even Numbers**
+   - **Task**: Write a function that takes an array of numbers and 
+   returns a new array containing only the even numbers.
    - **Hint**: Use the `.filter()` method.
    ```javascript
    const numbers = [10, 23, 45, 66, 78, 91];
    // Your code here
-   ```
+/*
+*/
+function evenNums(arr){
+   evenArr = [];
+ for (const num of arr){
+  if(num % 2 === 0) evenArr.push(num); 
+ }
+ return evenArr;
+}
+
+console.log(evenNums([ 10, 23, 45, 66, 78, 91 ])); // [ 10, 66, 78 ]
+
+
+
+
+
+
+/*
 ### 4. **Double the Array Elements**
-   - **Task**: Write a function that takes an array of numbers and returns a new array where each number is doubled.
+   - **Task**: Write a function that takes an array of numbers 
+   and returns a new array where each number is doubled.
    - **Hint**: Use the `.map()` method.
    ```javascript
-   const numbers = [5, 10, 15, 20];
-   // Your code here
+   const numbers = [5, 10, 15, 20];   // Your code here
+
    ```
+
+
 ### 5. **Check if All Elements Are Positive**
-   - **Task**: Write a function that takes an array of numbers and returns `true` if all numbers are positive, otherwise `false`.
+   - **Task**: Write a function that takes an array of numbers and returns 
+   `true` if all numbers are positive, otherwise `false`.
    - **Hint**: Use the `.every()` method.
    ```javascript
    const numbers = [4, 7, 9, 13, 21];
-   // Your code here
+   
    ```
 ### 6. **Find the First Negative Number**
-   - **Task**: Write a function that takes an array of numbers and returns the first negative number in the array.
+   - **Task**: Write a function that takes an array of numbers and returns the first negative 
+   number in the array.
    - **Hint**: Use the `.find()` method.
    ```javascript
    const numbers = [3, 5, -7, 9, -12, 15];
@@ -151,52 +262,200 @@ Here are some exercises to help you practice and get comfortable with array meth
    // Your code here
    ```
 ### 11. **Reverse an Array**
-   - **Task**: Write a function that takes an array and returns a new array with the elements in reverse order.
+   - **Task**: Write a function that takes an array and returns a new array 
+   with the elements in reverse order.
    - **Hint**: Use the `.reverse()` method.
    ```javascript
    const numbers = [1, 2, 3, 4, 5];
    // Your code here
    ```
 ### 12. **Merge Two Arrays**
-   - **Task**: Write a function that takes two arrays and returns a new array that merges both arrays together.
+   - **Task**: Write a function that takes two arrays and returns a new array that
+    merges both arrays together.
    - **Hint**: Use the `.concat()` method or the spread operator (`...`).
    ```javascript
    const array1 = [1, 2, 3];
    const array2 = [4, 5, 6];
-   // Your code here
+   */
+
+   const arr1 = [1, 2, 3];
+   const arr2 = [4, 5, 6, 'string', null, '123', 123];
+function mergeArr( arr1, arr2){
+   let newArr = (arr1).concat(arr2);
+   return newArr;
+}
+
+console.log(mergeArr(arr1, arr2)); // [ 1, 2, 3, 4, 5, 6, 'string', null, '123', 123 ]
+
+   /*
    ```
 ### 13. **Check if an Array Contains a Value**
-   - **Task**: Write a function that takes an array and a value, and returns `true` if the array contains the value, otherwise `false`.
+   - **Task**: Write a function that takes an array and a value, and returns `true` 
+   if the array contains the value, otherwise `false`.
    - **Hint**: Use the `.includes()` method.
    ```javascript
    const fruits = ['apple', 'banana', 'orange'];
    const searchFruit = 'banana';
-   // Your code here
+ */
+
+function includes(arr, x){
+   return arr.includes(x);
+}
+
+const fruits = ['apple', 'banana', 'tomato'];
+
+console.log(includes(fruits, 'plum'));
+   /*
    ```
 ### 14. **Find Index of a Value**
-   - **Task**: Write a function that takes an array and a value, and returns the index of the first occurrence of the value in the array.
+   - **Task**: Write a function that takes an array and a value, 
+   and returns the index of the first occurrence of the value in the array.
    - **Hint**: Use the `.indexOf()` method.
    ```javascript
    const numbers = [10, 20, 30, 40, 50];
    const searchNumber = 30;
    // Your code here
+
+
    ```
 ### 15. **Convert an Array to a String**
-   - **Task**: Write a function that takes an array and returns a string with all the array elements joined together with a specified separator.
+   - **Task**: Write a function that takes an array and returns a string with all the array elements 
+   joined together with a specified separator.
    - **Hint**: Use the `.join()` method.
    ```javascript
    const words = ['Hello', 'world', 'this', 'is', 'JavaScript'];
    const separator = ' ';
    // Your code here
    ```
+*/
+
+function arrString(arr){
+   return arr.join(' ');
+}
+console.log(arrString(['Hello', 'world', 'this', 'is', 'JavaScript'])); // Hello world this is JavaScript
+
+
+/*
+
+/*
+Requirement:
+Write a function named as firstDuplicate() which takes an array argument and returns 
+the first duplicated number in the array when invoked.
+NOTE: Make your code dynamic that works for any array and return -1 
+if there are no duplicates in the array. 
+For two elements to be considered as duplicated, value and data types of the elements must be same.
+
+Examples:
+firstDuplicate([ 3, 7, 10, 0, 3, 10 ])		-> 3
+firstDuplicate([ 5, 7, 7, 0, 5, 10 ])		-> 5
+firstDuplicate([ 5, '5', 3, 7, 4 ])		-> -1
+firstDuplicate([ 123, 'abc', '123', 3, 'abc' ])	-> 'abc'
+firstDuplicate([ 1, 2, 3])			-> -1
+firstDuplicate([ 'foo', 'abc', '123', 'bar’ ]) 	-> -1
+*/
+ function firstDuplicate(arr) {
+    for ( let i = 0; i <= arr.length - 2; i++){
+      for( let j = i + 1; j <= arr.length - 2; j++){
+         if (arr[i] === arr[j]) return arr[i]
+      }
+    }
+    return -1;
+ }
+
+
+
+ //best solution without nested loops
+ function firstDuplicate2(arr) {
+
+   for (let i = 0; i < arr.length - 1; i++) {
+       if (arr.includes(arr[i], i + 1)) return arr[i];  
+   }
+   return -1;
+}
+
+console.log(firstDuplicate([ 3, 7, 10, 0, 3, 10 ]))	//	-> 3)
+console.log(firstDuplicate([ 5, 7, 7, 0, 5, 10 ]))	//	-> 5
+
+
+/*
+Write a function named as getDuplicates() which takes an array argument 
+and returns all the duplicated elements in the array when invoked.
+
+NOTE: Make your code dynamic that works for any array and return empty array 
+if there are no duplicates in the array. For two elements to be considered as duplicated,
+ value and data types of the elements must be same.
+
+Examples:
+getDuplicates([ 0, -4, -7, 0, 5, 10, 45, -7, 0 ])		-> [ 0, -7 ]
+getDuplicates([ 1, 2, 5, 0, 7 ])			-> [ ]
+getDuplicates(['A', 'foo', '12’ , 12, 'bar', 'a', 'a', 'foo' ])	-> [ 'foo', 'a’ ]
+getDuplicates([ 'foo', '12' , 12, 'bar', 'a' ])		-> [ ]
+*/
+
+function getDuplicates(arr) { //[ 0, -4, -7, 0, 5, 10, 45, -7, 0 ]
+   let dup = [];//[0, ]
+   let container =[]; // [0, -4, -7, 5, ]
+
+  for( let element of arr){
+   if(!container.includes(element)) container.push(element);
+      else if(!dup.includes.element) dup.push(element)
+  }
+  return dup;
+}
+
+console.log(getDuplicates([ 0, -4, -7, 0, 5, 10, 45, -7, 0 ])) // [ 0, -7, 0 ]
+console.log(getDuplicates([ 'A', 'foo', '12' , 12, 'bar', 'a', 'a', 'foo' ])); // [ 'a', 'foo' ]
+
+
+
+/*
+	3.	Create a Movie Object
+	•	Create an object named movie with the following properties:
+	•	title: “Inception”
+	•	director: “Christopher Nolan”
+	•	genres: [“Action”, “Sci-Fi”]
+	•	releaseYear: 2010
+	•	ratings: {imdb: 8.8, rottenTomatoes: 87}
+	•	Output your object to the console. */
+
+ const movie = {
+   title: 'Inception',
+   director: 'Christopher Nolan',
+   genre: ['action', 'Sci-Fi'],
+   releaseYear: 2010,
+   ratings: {
+      IMDB: 8.8,
+      RottenTomatoes: 87
+      }
+ }
+ console.log(movie);
+ console.log(Object.keys(movie));
+ console.log(Object.entries(movie));
+
+   /*
+	4.	Create a Restaurant Object
+	•	Create an object named restaurant with the following properties:
+	•	name: “Pasta Palace”
+	•	cuisine: “Italian”
+	•	location: “New York City”
+	•	dishes: [“Spaghetti”, “Lasagna”, “Ravioli”]
+	•	ratings: {yelp: 4.5, google: 4.6}
+	•	Output your object to the console.
+   */
 
 
 
 
 
 
-
-
-
+   /*
+	5.	Create a Person Object
+	•	Create an object named person with the following properties:
+	•	name: “Emma Johnson”
+	•	age: 28
+	•	occupation: “Graphic Designer”
+	•	skills: [“Photoshop”, “Illustrator”, “InDesign”]
+	•	contact: {email: "emma.j@example.com", phone: "555-1234"}
 
 */
+

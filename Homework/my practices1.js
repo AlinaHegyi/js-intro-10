@@ -499,16 +499,3 @@ if (number === 1) console.log('3 POINTS')
      break;
    default: console.log('0 POINT');
  }
-
-
-    
-    
-    
-   
-    
-
-
-
-
-
-

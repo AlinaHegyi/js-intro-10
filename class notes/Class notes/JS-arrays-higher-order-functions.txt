@@ -1,0 +1,131 @@
+
+
+JS Higher Order functions - 31 AUGUST 2024
+
+
+How to create functions in JS
+
+1. Function declaration- traditional way
+
+ SYNTAX:
+   function funcName(args){
+    //block of code
+   }
+
+function sum(a, b){
+    return a + b;
+}
+
+
+
+
+
+2. Function expression
+
+const sum = function (a, b){
+    return a + b;
+}
+ sum(3, 5);
+
+
+3. Arrow function (replace  '= function'  with => )
+          -released with ES6 and it creates more concise way to create functions
+
+const sum => (a, b){
+    return a + b;
+}
+
+
+//create a func called product which returns the multiplication of 2 nums
+
+  //function declaration 
+
+ function product (a, b){
+    return a * b;
+ }
+
+
+//function expression 
+
+ const product = function (a, b){
+    return a * b;
+ }
+
+
+
+// arrow function
+
+const product = (a, b) => {
+    return a * b;
+}
+
+
+
+// write a function called printHello which prints 'Hello';
+
+  //function declaration
+  
+     function printHello() {
+        console.log('hello');
+     }
+
+  //function expression
+   const printHello = function() => {
+    console.log('Hello');
+   }
+
+
+//arrow function
+
+const printHello = () => {
+    console.log('Hello');
+}
+
+
+// enhanced arrow function when there is only 1 line of code (we can omit curly braces)
+
+ const product = (a, b) => {
+    return a * b;
+}
+
+const product = (a, b) => a * b; // return type
+const printHello = () => console.log('Hello'); //void type
+
+
+const arr = [40, 30, 2, -5];
+
+arr.sort((a, b) => a - b)
+
+
+function getInfo() {
+    console.log('Today is Saturday');
+}
+
+
+function greet(func) {
+   console.log('Hello');
+   funct();
+}
+
+
+greet(getInfo):
+
+ OUTPUT:
+  Hello
+  Today is Saturday
+
+greet: becomes higher order func, meaning is taking another func as argument
+getInfo: becomes a callback func, meaning is passed as an argument to another function
+
+
+
+
+
+
+
+
+
+
+
+
+

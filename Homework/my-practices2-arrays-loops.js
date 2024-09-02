@@ -459,3 +459,99 @@ console.log(getDuplicates([ 'A', 'foo', '12' , 12, 'bar', 'a', 'a', 'foo' ])); /
 
 */
 
+//map
+
+const words = ['foo', 'bar', 'foobar', 'rose'];
+
+
+
+const wordsUpper = words.map((word) => {
+   return word.toUpperCase();
+});
+
+console.log(wordsUpper); // [ 'FOO', 'BAR', 'FOOBAR', 'ROSE' ]
+
+// filter
+
+const numbers = [1, 2, 4, 6, 8, 9, 10, 12];
+const evenNumbers = numbers.filter((number) => {
+   return number % 2 === 0;
+});
+console.log(evenNumbers); // [ 2, 4, 6, 8, 10, 12 ]
+console.log(numbers);  // [1, 2, 4, 6, 8, 9, 10, 12];
+
+
+
+
+const names = ['Jane', 'Alex', 'James', 'Max', 'John', 'Alina'];
+
+const namesJ = names.filter((name) => {
+  return name[0] === 'J';
+});
+
+console.log(namesJ); // [ 'Jane', 'James', 'John' ]
+
+const names4 = names.filter((name)=> {
+   return name.length === 4;
+})
+
+console.log(names4); //[ 'Jane', 'Alex', 'John' ]
+
+
+//reduce
+     //find sum of nums in the array
+ const nums = [ 1, 2, 4, 5 ]; //  12
+
+// let summ = 0;
+
+// for (const num of nums) {
+//     summ += num;
+// }
+// console.log(summ); //12
+
+const result = nums.reduce((sum, num) => {
+ sum += num;
+ return sum;
+}, 0);
+
+console.log(result); //12
+
+
+//find max number
+    //with for-of loop
+
+//     let max = -Infinity;
+
+//     for ( const num of nums) {
+//       if(num > max) max = num;
+//     }
+
+// console.log(max); //5
+
+const maxNumber = nums.reduce((accumulator, current) => {
+  if (current > accumulator) return current;
+  return accumulator;
+
+}, -Infinity);
+console.log(maxNumber); // 5
+
+ // find the shortest name
+const namesArr = ['Jane', 'Alex', 'James', 'Max', 'John', 'Alina'];
+
+// let shortestName = namesArr[0];
+
+// for(const name of namesArr){
+//    if(name.length < shortestName.length) shortestName = name;
+// };
+
+// console.group(shortestName); //Max
+
+
+const shortest = namesArr.reduce((acc, curr) => {
+ if (acc.length < curr.length) return acc;
+ return curr;
+}, namesArr[0]);
+
+
+console.log(shortest); // Max
+

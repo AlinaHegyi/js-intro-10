@@ -1,3 +1,5 @@
+
+console.log('\n------------------TASK01------------------\n');
 /*
 Write a function named as firstPos() which takes an 
 array as an argument and returns the first positive 
@@ -12,7 +14,7 @@ firstPos([0, 3, -9,  5, 8])  -> 3
 firstPos([-2, 0, -7, 10, -5])  -> 10
 firstPos([1, 2, 3, -2])                         -> 1
 */
-console.log('\n------------------TASK01------------------\n');
+
 
 function firstPos(arr) {
     for (let i = 0; i < arr.length; i++) {
@@ -24,6 +26,9 @@ console.log(firstPos([0, 3, -9,  5, 8]));
 console.log(firstPos([-2, 0, -7, 10, -5]));
 console.log(firstPos([1, 2, 3, -2]));
 
+
+
+console.log('\n------------------TASK02------------------\n');
 /*
 Write a function named as lastNeg() which takes an 
 array as an argument and returns the last negative 
@@ -53,7 +58,7 @@ console.log(lastNeg([1, 2, 3, -2]));
 
 
 
-
+console.log('\n------------------TASK03------------------\n');
 /*Requirement:
 Write a function named as max() which takes an array 
 as an argument and returns the greatest element when 
@@ -84,7 +89,7 @@ console.log(max([0, 3, -9,  5, 8]));
 
 
 
-
+console.log('\n------------------TASK04-----------------\n');
 
 /*
 Write a function named as firstLongest() which takes 
@@ -121,8 +126,9 @@ firstLongest(["purple", "yellow", "orange"])  ->
     console.log(firstLongest(["purple", "yellow", "orange"])); 
 
 
-/*
 
+console.log('\n------------------TASK05------------------\n');
+/*
 Requirement: task 5
 Write a function named as lastShortest() which takes 
 an array as an argument and returns the shortest 
@@ -153,8 +159,8 @@ console.log(lastShortest(["red", "blue", "yellow", "white"]));
 console.log(lastShortest(["Apple", "Banana", "Mango"]));
 console.log(lastShortest(["white", "yellow", "brown"]));
 
-
-/*task 6
+console.log('\n------------------TASK06------------------\n');
+/*
 Write a function named as min() which takes an array 
 as an argument and returns the greatest element when 
 invoked.
@@ -183,7 +189,7 @@ console.log(min([ -2, 0, -7, 10, -5 ])); // -7
 console.log(min([0, 3,  5, 8])); // 0
 
 
-
+console.log('\n------------------TASK07------------------\n');
 /* task 7
 Requirement:
 Write a function named as commonElements() which takes 2 arrays 
@@ -205,12 +211,12 @@ function commonElements(arr1, arr2) {
         for(let j = 0; j < arr2.length; j++) {
             if(arr1[i] === arr2[j]) {
                 if(!common.includes(arr1[i])) common.push(arr1[i]);     
-            }   
-            
-        }
-    }
+       }   
+      }
+     }
     return common;
 }
+
 console.log(commonElements([ 10, 20, 30, 50, 70 ], [ 20, 50, 70 ]));
 console.log(commonElements([ 30, 50, 70 ], [ 20, 100, 300 ]));
 console.log(commonElements([ "30", "abc", "hi" ], [ 30, "Hi", "abc" ]));

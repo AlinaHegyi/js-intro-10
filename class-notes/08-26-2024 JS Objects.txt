@@ -1,7 +1,6 @@
 
 
 
-
 08-26-2024 JS Objects
 
 Object: a collection properties
@@ -41,4 +40,3 @@ empty string, array, object
 
 number: 0
 boolean: false
-

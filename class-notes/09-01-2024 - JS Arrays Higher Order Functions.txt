@@ -1,10 +1,7 @@
 
 
-01 september 2024
 
-Higher Order Functions
-
-09-01-2024 - JS Arrays Higher Order Functions
+09-01-2024 - JS Arrays Higher Order Functions - call-apply-bind-currying
 
 
 if(curr % 2 === 0) return acc + 1;
@@ -20,6 +17,7 @@ defining this keyword.
 call: takes individual arguments and executes the borrowed function 
 apply: takes an array of arguements and executes the borrowed function
 bind: takes individual arguments and returns a new function to be invoked
+
 
 
 

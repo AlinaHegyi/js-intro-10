@@ -1,3 +1,6 @@
+
+
+
 08-17-2024 GIT Conflicts
 
 
@@ -26,8 +29,7 @@ CLONING A REMOTE REPO AND MAKING FIRST PUSH (master/main)
 
 
 
-CLONING A REMOTE REPO AND MAKING FIRST PUSH (not master/main) - THIS IS WHAT YOU WILL DO
- IN THE COMPANY
+CLONING A REMOTE REPO AND MAKING FIRST PUSH (not master/main) - THIS IS WHAT YOU WILL DO IN THE COMPANY
 1. Clone the project to your local: git clone <url>
 2. You are not allowed to do changes and push them with master/main branches 
 3. Create your own local branch and switch to it 
@@ -58,14 +60,13 @@ git branch -d <branch-name>
 
 
 GIT CONFLICT 
--Merge conflict happens if multiple users work on the same file and one of the collaborators 
-did not pull the latest changes and trying to push and merge more changes to same file.
+-Merge conflict happens if multiple users work on the same file and one of the collaborators did not pull the latest
+changes and trying to push and merge more changes to same file.
 
-If it is an easy resolution, we can just fix it inline using GitHub/GitLab/Bitbucket or
- Azure DevOps .Then, merge the changes 
+If it is an easy resolution, we can just fix it inline using GitHub/GitLab/Bitbucket or Azure DevOps 
+Then, merge the changes 
 
-HOWEVER, if it is more challenging, then it is better to pull the changes to your local
- and fix them and push them.
+HOWEVER, if it is more challenging, then it is better to pull the changes to your local and fix them and push them.
 1. Go back to your local repo 
 2. Switch to master/main 
 3. Pull the changes to master -> git pull 

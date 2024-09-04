@@ -1,5 +1,7 @@
 
 
+08-12-2024 CLI
+
 CLI: Command Line Interface
 GUI: Graphical User Interface
 
@@ -27,7 +29,6 @@ Windows: C:\
 
 
 SOME MOST USED LINUX/CLI COMMANDS
-
 1. Show me active directory I am on now
 pwd: print working directory (for mac)
 cd: change directory (for windows)
@@ -98,7 +99,3 @@ Non-empty with initial content:
 Node.js command
 
 node jsFileName.js (for both mac and windows)
-
-
-
-

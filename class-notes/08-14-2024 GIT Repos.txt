@@ -1,7 +1,6 @@
 
 
 
-
 08-14-2024 GIT Repos
 
 RECAP:
@@ -70,5 +69,4 @@ git branch <branch-name>		-> create a new branch with the specified name.
 git checkout <branch-name> 		-> switch to the specified branch
 git checkout -b <branch-name> 	-> create and switch to the created branch.
 git branch –d <branch-name> 		-> delete the specified branch.
-
 

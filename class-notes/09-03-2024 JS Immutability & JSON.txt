@@ -1,4 +1,6 @@
 
+
+
 09-03-2024 JS Immutability & JSON
 
 Mutable: changing
@@ -77,15 +79,3 @@ making it easy to convert between JSON and JavaScript objects.
 What is mutability?
 What is JSON and its operations?
 Explain what are the differences between deep and shallow copy?
-
-
-
-
-
-
-
-
-
-
-
-

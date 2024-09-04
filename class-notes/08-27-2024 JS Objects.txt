@@ -1,16 +1,20 @@
 
 
-JS Objects recap
 
-OBJECT: it is a reference data type and stores data in key-value pairs
-Object properties are not index based
-Object properties can be accesed, updated, deleted using the keys
+08-27-2024 JS Objects
 
-*** keys are by default string and UNIQUE!
-*** values can be of any type and duplicates
+
+RECAP:
+Object: it is a reference data type and stores data in key-value pairs
+Object properties are not index based.
+Object properties can be accessed, updated, deleted using the keys.
+
+*** keys are by default string and UNIQUE!!!
+*** values can be of any type and duplicates.
+
 
 const obj1 = {};
-const obj2 = new Object;
+const obj2 = new Object();
 
 // adding a property
 obj2.name = 'smth';
@@ -96,4 +100,3 @@ const person = {
 };
 
 console.log(person.fullname()); // 'John Doe'
-

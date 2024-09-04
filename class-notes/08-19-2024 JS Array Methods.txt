@@ -1,4 +1,6 @@
 
+
+
 08-19-2024 JS Array Methods
 
 
@@ -76,7 +78,7 @@ function func1(func) {
 }
 
 function func2() {
-
+  
 }
 
 
@@ -108,19 +110,3 @@ ARGUMENTS: When there is no arg, it separates with coma (,) like toString() meth
   It can take a custom string separator as an argument
 CHANGE ORIGINAL VALUE: NO
 STATIC or NON-STATIC: NON-STATIC
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

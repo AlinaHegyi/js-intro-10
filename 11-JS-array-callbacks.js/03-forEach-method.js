@@ -61,7 +61,7 @@ onsole.log('\n--------iteration of arrays with forEach method - length of names-
 let result = [];
 
 names.forEach((name) => {
-    XPathResult.push(name.length);
+    result.push(name.length);
 });
 
 console.log([result]);

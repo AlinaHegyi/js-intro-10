@@ -1,4 +1,6 @@
 
+
+
 08-25-2024 JS Loops
 
 
@@ -35,7 +37,6 @@ Mostly used with iterable objects like arrays.
 
 
 CHECKING A NAME STARTING WITH A LETTER IGNORING CASES
-
 name[0] === 'J' || name[0] === 'j' 
 name[0].toLowerCase() === 'j'
 name[0].toUpperCase() === 'J'

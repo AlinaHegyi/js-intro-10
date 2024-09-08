@@ -74,6 +74,17 @@ console.log(countVowels('Hello World')) //3
 console.log(countVowels('JavaScript is fun')) //5
 console.log(countVowels('')) //0
 
+const countVowelss = (word) => {
+   let vowelCounter = 0;
+   const vowels = ['A', 'E', 'I', 'O', 'U', 'a', 'e', 'i', 'o', 'u']
+
+   for(letter of word){
+       if(vowels.includes(letter)) vowelCounter++;
+   }
+   return vowelCounter;
+}
+
+
 
 console.log('\n---------------TASK04---------------\n');
 /*Requirement: 
@@ -96,9 +107,7 @@ function countConsonants(str) {
       let vowels = 'AEIOUaeiou';
       let char = str[i];
 
-      if (!vowels.includes(char)) {
-         count++;
-      }
+      if (!vowels.includes(char)) count++;
    }
    return count;
 };
@@ -133,7 +142,7 @@ const countWords = (str) => {
 console.log(countWords("     Javascript is fun       ")); //3
 console.log(countWords("Cypress is an UI automation tool.    ")); //6
 
-
+//const countWords2 = (str) => str.trim().split(' ').length
 
 console.log('\n---------------TASK06---------------\n');
 
@@ -165,7 +174,7 @@ console.log(factorial(4));// 24
 console.log(factorial(0)); // 1
 console.log(factorial(1)); // 1
 
-
+// const factorial = (n) => n === 0 || n === 1? 1: n * factorial(n-1)
 
 console.log('\n---------------TASK07---------------\n');
 
@@ -274,7 +283,7 @@ console.log(count3OrLess("JavaScript is fun")); //2
 console.log(count3OrLess("My name is John Doe")); //3
 console.log(count3OrLess("")); // 1
 
-
+// const count3OrLess = (str) => str.trim().split(' ').filter(word => word.length > 0 && word.length <= 3).length
 
 console.log('\n---------------TASK10---------------\n');
 /*
@@ -304,9 +313,18 @@ function isPrime(n) {
    return true;
 }
 
+console.log(isPrime(5));
+console.log(isPrime(2));
 console.log(isPrime(29));
+console.log(isPrime(-5));
+console.log(isPrime(0));
+console.log(isPrime(1));
 
-
+const isPrime = (num) => {
+   if(num < 2) return false;
+   if(num === 2 || num === 3) return true;
+   if(num % 2 === 0 || num % 3 === 0) return false;
+}
 
 console.log('\n---------------TASK11---------------\n');
 /*
@@ -354,6 +372,12 @@ console.log(add([3, 0, 0, 7, 5, 10], [6, 3, 2])) //[9, 3, 2, 7, 5, 10]
 console.log(add([10, 3, 6, 3, 2], [6, 8, 3, 0, 0, 7, 5, 10, 34])) //[16, 11, 9,  3, 2, 7, 5, 10, 34]​
 console.log(add([-5, 6, -3, 11], [5, -6, 3, -11])) // [0, 0, 0, 0]
 
+//  return arr1.map((value, i) => value + (arr2[i] || 0))
+//const add = (arr1, arr2) => {
+//    if(arr2.length > arr1.length) [arr1, arr2] = [arr2, arr1]
+//   }
+
+
 
 console.log('\n---------------TASK12---------------\n');
 /*
@@ -384,6 +408,9 @@ function removeExtraSpaces(str) {
 console.log(removeExtraSpaces('Hello')); // Hello
 console.log(removeExtraSpaces("      Hello    World     ")); // Hello World
 console.log(removeExtraSpaces("     JavaScript is          fun")); // JavaScript is fun
+
+//const removeExtraSpaces = (str) => str.trim().split(' ').filter(s => s.length > 0).join(' ');
+
 
 console.log('\n---------------TASK13---------------\n');
 /*
@@ -416,7 +443,22 @@ console.log(findClosestTo10([10, -13, 5, 70, 15, 57]));
 console.log(findClosestTo10([10, -13, 8, 12, 15, -2]));
 console.log(findClosestTo10([0, -1, -2]));
 
-// i am not sure about this solution.
+const findClosestTo10 = (arr) =>{
+   let closestTo10 = Number.MAX_VALUE
+   let closestDiff = Number.MAX_VALUE
+
+   for(currentNum of arr){
+       if(currentNum === 10) continue;
+
+       let currentDiff = Math.abs(10 - currentNum);
+
+       if(currentDiff < closestDiff || ((currentDiff === closestDiff) && currentNum < closestTo10)){
+           closestTo10 = currentNum;
+           closestDiff = currentDiff;
+       }
+   }
+   return closestTo10;
+}
 
 console.log('\n---------------TASK14---------------\n');
 /*
@@ -460,6 +502,22 @@ else {
   }
  }
 };
+//
+const isEmailValid = (email) => {
+	if(email.includes(' ')) return false;
+	if(email.split('@').length !== 2) return false
+
+
+	const beginning = email.split('@')[0]
+	const middle = email.split('@')[1].split('.')[0]
+	const end = email.split('@')[1].split('.')[1]
+
+	if(beginning === undefined || middle === undefined || end === undefined) return false
+
+   return (beginning.length >= 2 && middle.length >= 2 && end.length >= 2)
+ }
+
+
 
 
 console.log(isEmailValid('johndoe@yahoo'));
@@ -532,8 +590,24 @@ console.log(isPasswordValid("Chicago123$")); //true
 
 
 
+const isPasswordValid = (pass) => {
+	if(pass.includes(' ')) return false;
+	if(pass.length < 8 || pass.length > 16) return false
 
+	let hasUppercase = false;
+	let hasLowercase = false;
+	let hasDigit = false;
+	let hasSpecial = false;
 
+	for(char of pass){
+	 if(char >= 'A' && char <= "Z") hasUppercase = true;
+	 else if(char >= 'a' && char <= "z") hasLowercase = true;
+	 else if(char >= '0' && char <= "9") hasDigit = true;
+	 else hasSpecial = true;
+	}
 
+ return (hasUppercase && hasLowercase && hasDigit && hasSpecial);
+
+}
 
 

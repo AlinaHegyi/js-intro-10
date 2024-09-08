@@ -111,7 +111,8 @@ console.log('\n---------------TASK04---------------\n');
 /*
 Requirement:
 Write a function named as doubleOrTripleWord() which takes a string word as an argument 
-and returns the given word back tripled if the string length is even or doubled if the string length is odd when invoked.
+and returns the given word back tripled if the string length is even or doubled if 
+the string length is odd when invoked.
 
 Examples:
 doubleOrTripleWord("Tech") 	-> "TechTechTech"

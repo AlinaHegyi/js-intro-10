@@ -184,7 +184,6 @@ function min(arr) {
     }
 
 
-
 console.log(min([ -2, 0, -7, 10, -5 ])); // -7
 console.log(min([0, 3,  5, 8])); // 0
 
@@ -204,6 +203,10 @@ commonElements([ 30, 50, 70 ], [ 20, 100, 300 ])  -> [ ]
 commonElements([ "30", "abc", "hi" ], [ 30, "Hi", "abc" ])  -> 
 ["abc" ] 
 */
+
+
+
+
 function commonElements(arr1, arr2) {
     let common = [];
 

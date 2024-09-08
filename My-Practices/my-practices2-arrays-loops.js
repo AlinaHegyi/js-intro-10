@@ -211,19 +211,35 @@ console.log(evenNums([ 10, 23, 45, 66, 78, 91 ])); // [ 10, 66, 78 ]
    and returns a new array where each number is doubled.
    - **Hint**: Use the `.map()` method.
    ```javascript
-   const numbers = [5, 10, 15, 20];   // Your code here
+   const numbers = [5, 10, 15, 20];  
+*/
+const numbers1 = [1, 2, 4, 6, 8, 10, 14 ];
+  function double(arr) {
+    return arr.map((number) => number * 2);
+  }
 
-   ```
+ 
+console.log(double(numbers1));
 
 
+
+/*
 ### 5. **Check if All Elements Are Positive**
    - **Task**: Write a function that takes an array of numbers and returns 
    `true` if all numbers are positive, otherwise `false`.
    - **Hint**: Use the `.every()` method.
    ```javascript
    const numbers = [4, 7, 9, 13, 21];
-   
-   ```
+  */
+
+ function positive(nums) {
+   return nums.every((number) =>  number > 0);
+ };
+
+let arrayNums = [4, 7, 9, 13, -21];
+console.log(positive(arrayNums));
+
+   /*
 ### 6. **Find the First Negative Number**
    - **Task**: Write a function that takes an array of numbers and returns the first negative 
    number in the array.
@@ -232,28 +248,93 @@ console.log(evenNums([ 10, 23, 45, 66, 78, 91 ])); // [ 10, 66, 78 ]
    const numbers = [3, 5, -7, 9, -12, 15];
    // Your code here
    ```
+*/
+ const numberss = [3, 5, -7, 9, -12, 15];
+
+ function firstNegative(arr) {
+   return numberss.find((num) => num < 0);
+ }
+
+console.log(firstNegative(numberss)); // -7
+
+
+/*
 ### 7. **Count Occurrences of an Element**
-   - **Task**: Write a function that takes an array and a value, and returns the number of times that value occurs in the array.
+   - **Task**: Write a function that takes an array and a value, and returns the number 
+   of times that value occurs in the array.
    - **Hint**: Use the `.reduce()` method to count occurrences.
    ```javascript
    const items = ['apple', 'banana', 'orange', 'apple', 'orange', 'banana', 'apple'];
    const searchItem = 'apple';
    // Your code here
    ```
+*/
+const items = ['apple', 'banana', 'orange', 'apple', 'orange', 'pineapple', 'banana', 'apple'];
+const searchItem = 'apple';
+
+function appleCount(items, searchItem){
+    return items.reduce((acc, curr) => {
+      if( curr === searchItem)  return acc + 1;
+         return acc;
+    }, 0)
+    }
+
+
+console.log(appleCount(items, searchItem)); //3
+
+
+/*
 ### 8. **Flatten a Nested Array**
-   - **Task**: Write a function that takes a nested array and returns a flat array (one-dimensional array).
+   - **Task**: Write a function that takes a nested array and returns a flat array 
+   (one-dimensional array).
    - **Hint**: Use the `.flat()` method or `.reduce()` combined with `.concat()`.
    ```javascript
    const nestedArray = [[1, 2], [3, 4], [5, 6], [7, 8]];
    // Your code here
-   ```
+   ``*/
+
+   const nestedArray = [[1, 2], [3, 4], [5, 6], [7, 8]];
+
+    function nested(arr) {
+      return nestedArray.flat()
+    }
+   
+   console.log(nested(nestedArray));
+ 
+   /*`
+
+
 ### 9. **Remove Duplicates from an Array**
    - **Task**: Write a function that takes an array and returns a new array with all duplicates removed.
    - **Hint**: Use the `Set` object or `.filter()` with `.indexOf()`.
    ```javascript
    const numbers = [1, 2, 2, 3, 4, 4, 5, 5, 6];
    // Your code here
-   ```
+
+*/
+const numberAr = [1, 2, 2, 3, 4, 4, 5, 5, 6];
+
+
+ function duplicates(arr) {
+    return arr.filter((x, index) => arr.indexOf(x) === index );
+ } 
+
+console.log(duplicates(numberAr));
+
+
+
+
+
+
+/*
+
+
+
+
+
+
+
+
 ### 10. **Sort an Array of Strings**
    - **Task**: Write a function that takes an array of strings and returns the array sorted alphabetically.
    - **Hint**: Use the `.sort()` method.
@@ -261,6 +342,21 @@ console.log(evenNums([ 10, 23, 45, 66, 78, 91 ])); // [ 10, 66, 78 ]
    const fruits = ['banana', 'apple', 'orange', 'mango', 'pineapple'];
    // Your code here
    ```
+/**/
+function sorted(strArr)  {
+   return strArr.sort();
+} 
+
+const fruitss = ['banana', 'apple', 'orange', 'mango', 'pineapple'];
+
+console.log(sorted(fruitss));
+
+
+
+/*
+
+
+
 ### 11. **Reverse an Array**
    - **Task**: Write a function that takes an array and returns a new array 
    with the elements in reverse order.
@@ -269,6 +365,15 @@ console.log(evenNums([ 10, 23, 45, 66, 78, 91 ])); // [ 10, 66, 78 ]
    const numbers = [1, 2, 3, 4, 5];
    // Your code here
    ```
+*/
+const numbersss = [1, 2, 3, 4, 5];
+const reversed = (array) => array.reverse();
+
+console.log(reversed(numbersss));
+
+
+/*
+
 ### 12. **Merge Two Arrays**
    - **Task**: Write a function that takes two arrays and returns a new array that
     merges both arrays together.
@@ -555,3 +660,183 @@ const shortest = namesArr.reduce((acc, curr) => {
 
 console.log(shortest); // Max
 
+
+/*
+1.Write a function named as firstlastWord() which takes a string word as an argument and returns
+ the first and last words from the given string when invoked. NOTE: Return empty string if the 
+ given string does not have any word.
+*/
+function firstLastWord(str) {
+    let words = str.split(' ')
+    if(words.length <= 0) { 
+      return '';
+    }
+    else {
+      return words[0] +' '+ words.at(-1);
+    }
+}
+
+console.log(firstLastWord('I love JavaScript very much')); // I much
+
+/*
+
+
+
+2.Write a function named removeDuplicates() which takes an array argument
+ and returns a new array with all the duplicates removed.
+
+*/
+ function removeDuplicates(arr) {
+   return arr.reduce((acc, curr) => {
+      if (!acc.includes(curr)) {
+         acc.push(curr);
+      }
+      return acc;
+    }, []);
+ };
+
+console.log(removeDuplicates([10, 20, 30, 40, 20, 10, 40, 50, 60, 70 ]));
+
+/*
+3.Write a function named countNeg() which takes an array 
+of numbers as an argument and returns how many elements are negative when invoked.
+*/
+
+function countNeg(numArray) {
+   return numArray.filter((num) => num < 0).length;
+}
+ console.log(countNeg([1, -4, -6, 4, 7, -12, 4, 3, 2, -7 ])); // 4
+
+/*
+4.Write a function named reverseStringWords() which takes a string as an argument 
+and returns the string back with each word separately reversed when invoked.
+ NOTE: Make your code dynamic that works for any string. Make sure you consider extra spaces before
+ and after words in the given string.
+*/
+
+function reverseStringWords(str) {
+  return str.split(' ').map((word) => word.split('').reverse().join('')).join(' ').trim();
+};
+
+
+console.log(reverseStringWords('I want to go home'));
+console.log(reverseStringWords('  I like JavaScript    '));
+
+
+/*
+
+function reverseStringWords(str){
+  let words = str.trim().split(' ')
+
+  for( let i = 0; i < words.length; i++){
+    words[i] = words[i].split('').reverse().join('')
+  }
+return words.join(' ');
+}
+
+
+
+
+5.
+
+
+
+
+6.
+
+
+
+
+7.
+
+
+
+
+8.
+
+
+
+
+
+
+9.
+
+
+
+
+
+
+
+*/
+/*
+TASK-1You are given a JS Array below:
+Count how many users are older than 30    -> 2
+Count how many users live in Chicago      -> 2
+Count how many users live in IL      -> 3
+Count how many users’ emails has Gmail domain   -> 2
+Find and store all the users name younger than 35     -> [ 'Tech', 'Jane', 
+'Alex' ]
+Find average of ages of all users     -> 28
+
+*/
+const users = [
+    {
+        firstName: 'Tech',
+        lastName: 'Global',
+        email: 'tech.global@techglobal.com',
+        age: 3,
+        address: {
+            street_line_1: '2800 S River Rd',
+            street_line_2: 'Suite 310',
+            city: 'Des Plaines',
+            state: 'IL',
+            zip: '60018'
+        }
+    },
+    {
+        firstName: 'John',
+        lastName: 'Doe',
+        email: 'johndoe@gmail.com',
+        age: 47,
+        address: {
+            street_line_1: '123 Abc St',
+            street_line_2: '',
+            city: 'Chicago',
+            state: 'IL',
+            zip: '12345'
+        }
+    },
+    {
+        firstName: 'Jane',
+        lastName: 'Doe',
+        email: 'janedoe@gmail.com',
+        age: 30,
+
+        address: {
+            street_line_1: '123 Abc St',
+            street_line_2: '',
+            city: 'Chicago',
+            state: 'IL',
+            zip: '12345'
+        }
+    },
+    {
+        firstName: 'Alex',
+        lastName: 'Smith',
+        email: 'alexsmith@outlook.com',
+        age: 32,
+        address: {
+            street_line_1: '456 Xyz St',
+            street_line_2: '',
+            city: 'Miami',
+            state: 'Florida',
+            zip: '67890'
+        }
+    }
+];
+  
+
+users.filter((users[0]) => {
+   if (users[0].age > 30)
+}
+    

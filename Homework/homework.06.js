@@ -153,17 +153,15 @@ noA(["apple", "abc", "ABC", "Alex", "A"])  -> ["###", "###", "###", "###", "###"
 
 */
  function noA(arr) {
-  
- }
+   return arr.map((str) => {
+    if (str.toLowerCase().charAt(0) === 'a') return '###' ;
+    return str;
+ })
+}
 
-
-
-
-
-
-
-
-
+console.log(noA(["javascript", "hello", "123", "xyz"]));
+console.log(noA(["apple", "123", "ABC", "javascript"]));
+console.log(noA(["apple", "abc", "ABC", "Alex", "A"]));
 
 
 
@@ -182,9 +180,18 @@ no3and5([10, 11, 12, 13, 14, 15])  -> [99, 11, 100, 13, 14, 101]
 
 */
 
+function no3and5 (arr) {
+   return arr.map((num) => {
+    if ( num % 15 === 0) return 101;
+    else if( num % 5 === 0) return 99;
+    else if (num % 3 === 0) return 100;
+    else return num;
+   });
+}
 
-
-
+console.log(no3and5([7, 4, 11, 23, 17]));
+console.log(no3and5([3, 4, 5, 6]));
+console.log(no3and5([10, 11, 12, 13, 14, 15]));
 
 
 

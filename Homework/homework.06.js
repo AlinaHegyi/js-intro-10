@@ -209,6 +209,34 @@ countPrimes([-10, -3, 0, 1])  -> 0
 countPrimes([7, 4, 11, 23, 17])  -> 4
 countPrimes([41, 53, 19, 47, 67])  -> 5
 */
+
+function countPrimes(arr) {
+  let filteredArr = arr.filter((x) => x >= 2);
+ let counter = 0;
+
+ function isPrime(num) {
+  for (let i = 2; i <= Math.sqrt(num); i++) {
+    if (num % i === 0) return false; 
+  }
+  return true;
+}
+ filteredArr.forEach((x) => {
+  if(isPrime(x)) counter++;
+  })
+
+return counter;
+
+};
+
+
+console.log(countPrimes([-10, -3, 0, 1])); // 0
+console.log(countPrimes([7, 4, 11, 23, 17])); // 4
+console.log(countPrimes([41, 53, 19, 47, 67])); // 5
+
+
+
+
+
 console.log('\n---------------TASK09---------------\n');
 /*equirement:
 Write a function named removeDuplicates() which takes an array argument 
@@ -223,12 +251,29 @@ removeDuplicates(["abc", "xyz", "123", "ab", "abc", "ABC"])  -> ["abc", "xyz",
 removeDuplicates(["1", "2", "3", "2", "3"])  -> ["1", "2", "3"]
 
 */
+
+function removeDuplicates(arr) {
+ return arr.reduce((acc, current) => {
+   if( !acc.includes(current)) acc.push(current);
+  return acc;
+}, [])
+};
+
+console.log(removeDuplicates([10, 20, 35, 20, 35, 60, 70, 60]));
+console.log(removeDuplicates([1, 2, 5, 2, 3]));
+console.log(removeDuplicates([0, -1, -2, -2, -1]));
+console.log(removeDuplicates(["abc", "xyz", "123", "ab", "abc", "ABC"]));
+console.log(removeDuplicates(["1", "2", "3", "2", "3"]));
+
+
+
 console.log('\n---------------TASK10---------------\n');
 /*
 Write a method named isDateFormatValid() that takes a 
 string as an argument and returns true if the given date is 
 valid or returns false otherwise.
 Expected Format: nn/nn/nnnn
+
 So, it must be presented as 
 <2digits>/<2digits>/<4digits>
 Examples:
@@ -240,6 +285,39 @@ isDateFormatValid("5/30/2020")  -> false
 isDateFormatValid("05/30/2020 ")  -> true
 isDateFormatValid("10/2/2020")  -> false
 */
+ function isDateFormatValid(str) {
+ if (str.length < 10) {
+  return false;
+ }
+ if (str[2] !== '/' || str[5] !== '/') {
+   return false;
+ };
+
+ let month = parseInt(str.slice(0, 2));
+ let day = parseInt(str.slice(3, 5));
+ let year = parseInt(str.slice(-4));
+
+ if (isNaN(day) || isNaN(month) || isNaN(year)) { 
+  return false;
+ }
+ if(day < 1 || day > 31) {
+   return false;
+ }
+ if (month < 1 || month > 12) { 
+  return false;
+ }
+ return true;
+};
+
+console.log(isDateFormatValid(""));
+console.log(isDateFormatValid("15/30/2020"));
+console.log(isDateFormatValid("10-30-2020 "));
+console.log(isDateFormatValid("10.30.2020"));
+console.log(isDateFormatValid("5/30/2020"));
+console.log(isDateFormatValid("05/30/2020 "));
+console.log(isDateFormatValid("10/2/2020"));
+
+
 console.log('\n---------------TASK11---------------\n');
 /*
 Requirement: 
@@ -254,6 +332,28 @@ secondMax([7, 4, 4, 4, 23, 23, 23])  -> 7
 secondMax([3, 4, 5, 6])  -> 5
 secondMax([10])  -> 10
 */
+function secondMax(arr) {
+  if (arr.length === 1) {
+      return arr[0];
+  }
+  let maxNum = Math.max(...arr);
+
+  let filteredArr = arr.filter(num => num !== maxNum);
+  if (filteredArr.length === 0) {
+      return maxNum;
+  }
+  return Math.max(...filteredArr);
+};
+
+console.log(secondMax([7, 4, 4, 4, 23, 23, 23]));
+console.log(secondMax([3, 4, 5, 6]));
+console.log(secondMax([10]));
+
+
+
+
+
+
 console.log('\n---------------TASK12---------------\n');
 /*Write a method named secondMin() takes an array argument 
 and returns the second min number from the array.
@@ -266,6 +366,26 @@ secondMax([7, 4, 4, 4, 23, 23, 23])  -> 7
 secondMax([3, 4, 5, 6])  -> 4
 secondMax([10])  -> 10
 */
+function secondMin(arr) {
+ 
+  if (arr.length === 1) {
+      return arr[0];
+  }
+  let min = Math.min(...arr);
+  let filteredArr = arr.filter(num => num !== min);
+
+  if (filteredArr.length === 0) {
+      return min;
+  }
+  return Math.min(...filteredArr);
+}
+
+
+console.log(secondMin([7, 4, 4, 4, 23, 23, 23])); 
+console.log(secondMin([3, 4, 5, 6])); 
+console.log(secondMin([10])); 
+
+
 console.log('\n---------------TASK13---------------\n');
 /*Write a method named mostRepeated() takes an array argument and 
 returns the most counted element from the array.
@@ -279,7 +399,36 @@ mostRepeated([10])  -> 10
 mostRepeated(["TechGlobal"])  ->  'TechGlobal'
 
 */
+function mostRepeated(arr) {
+  arr.sort();
+  
+  let element = arr[0];
+  let currentCount = 1;
+  let maxCount = 1;
+  let mostRepeatedElement = arr[0];
+
+  for (let i = 1; i < arr.length; i++) {
+      if (arr[i] === element) {
+          currentCount++; 
+      } else {
+          if (currentCount > maxCount) {
+              maxCount = currentCount;
+              mostRepeatedElement = element;
+          }
+          element = arr[i];
+           currentCount = 1;
+      }
+  }
+
+  if (currentCount > maxCount) {
+      mostRepeatedElement = element;
+  }
+  return mostRepeatedElement;
+};
 
 
-
+console.log(mostRepeated([4, 7, 4, 4, 4, 23, 23, 23]));
+console.log(mostRepeated(["pen", "pencil", "pen", "123", "abc", "pen", "pencil"]));
+console.log(mostRepeated([10]));
+console.log(mostRepeated(["TechGlobal"]));
 

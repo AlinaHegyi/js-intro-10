@@ -22,6 +22,13 @@ noSpace("Tech Global")  -> "TechGlobal"
  console.log(noSpace("Tech Global"));
 
 
+//bilal way
+
+const noSpace = (str) => str.split(' ').join('');
+
+
+
+
 console.log('\n---------------TASK02---------------\n');
 /*
 Requirement:
@@ -55,6 +62,15 @@ console.log(replaceFirstLast("Tech Global"))
 console.log(replaceFirstLast("A"))
 console.log(replaceFirstLast("    A      "))
 
+//bilal way
+
+const replaceFirstLast = (str) => {
+  str = str.trim()
+  return str.length < 2 ? "" : str[str.length - 1] + str.slice(1, str.length - 1) + str[0];
+}
+
+
+
 console.log('\n---------------TASK03---------------\n');
 /*
 Write a function named hasVowel() which takes a string argument and returns 
@@ -80,6 +96,13 @@ console.log(hasVowel("Javascript"));
 console.log(hasVowel("Tech Global"));
 console.log(hasVowel("1234"));
 console.log(hasVowel("ABC"));
+
+//Bilal way
+
+const hasVowel = (str) => str.split('').filter(c => ['a', 'e', 'i', 'o', 'u', 'A', 'E', 'I', 'O', 'U'].includes(c)).length > 0
+
+
+
 
 console.log('\n---------------TASK04---------------\n');
 /*Write a function named checkAge() which takes a number argument to be 
@@ -114,6 +137,19 @@ console.log(checkAge(2050));
 console.log(checkAge(1920));
 console.log(checkAge(1800));
 
+// Bilal way
+
+const checkAge = (YOB) => {
+  const currYear = 2023;
+  const age = currYear - YOB;
+
+  if(age < 0 || age > 120) return 'AGE IS NOT VALID'
+  else if(age >= 16) return "AGE IS ALLOWED"
+  else return "AGE IS NOT ALLOWED"
+}
+
+
+
 
 console.log('\n---------------TASK05---------------\n');
 /*Write a function named averageOfEdges() which takes three number 
@@ -139,6 +175,9 @@ console.log(averageOfEdges(-2, -2, 10));
 console.log(averageOfEdges(-3, 15, -3));
 console.log(averageOfEdges(10, 13, 20));
 
+// Bilal way
+
+const averageOfEdges = (num1, num2, num3) => (Math.max(num1, num2, num3) + Math.min(num1, num2, num3))/2;
 
 console.log('\n---------------TASK06---------------\n');
 /*Requirement:
@@ -162,6 +201,10 @@ noA(["apple", "abc", "ABC", "Alex", "A"])  -> ["###", "###", "###", "###", "###"
 console.log(noA(["javascript", "hello", "123", "xyz"]));
 console.log(noA(["apple", "123", "ABC", "javascript"]));
 console.log(noA(["apple", "abc", "ABC", "Alex", "A"]));
+
+//Bilal way
+const noA = (arr) => arr.map(i =>  i.toLowerCase()[0] === 'a' ? '###' : i);
+
 
 
 
@@ -194,7 +237,6 @@ console.log(no3and5([3, 4, 5, 6]));
 console.log(no3and5([10, 11, 12, 13, 14, 15]));
 
 
-
 console.log('\n---------------TASK08---------------\n');
 /*Requirement:
 Write a function named countPrimes() which takes an array of integer 
@@ -225,7 +267,6 @@ function countPrimes(arr) {
   })
 
 return counter;
-
 };
 
 
@@ -233,6 +274,21 @@ console.log(countPrimes([-10, -3, 0, 1])); // 0
 console.log(countPrimes([7, 4, 11, 23, 17])); // 4
 console.log(countPrimes([41, 53, 19, 47, 67])); // 5
 
+// Bilal way
+
+const countPrime = (arr) => {
+
+  return arr.filter(num => {
+    if(num < 2) return false;
+    if(num === 2) return true;
+    if(num % 2 === 0) return false
+
+    for(let i = 3; i < num; i+=2){
+      if(num % i === 0) return false
+    }
+    return true;
+  }).length;
+}
 
 
 
@@ -265,6 +321,17 @@ console.log(removeDuplicates([0, -1, -2, -2, -1]));
 console.log(removeDuplicates(["abc", "xyz", "123", "ab", "abc", "ABC"]));
 console.log(removeDuplicates(["1", "2", "3", "2", "3"]));
 
+// Bilal way
+
+const removeDuplicates = (arr) => {
+  let result = [];
+
+  arr.forEach(i => {
+    if(!result.includes(i)) result.push(i)
+  })
+
+  return result;
+}
 
 
 console.log('\n---------------TASK10---------------\n');
@@ -317,6 +384,43 @@ console.log(isDateFormatValid("5/30/2020"));
 console.log(isDateFormatValid("05/30/2020 "));
 console.log(isDateFormatValid("10/2/2020"));
 
+// bilal solution
+
+const isDateFormatValid = (date) =>{
+  const dateAsArr = date.split('/')
+
+  if(dateAsArr.length !== 3) return false;
+
+  const month = date.split('/')[0]
+  const day = date.split('/')[1]
+  const year = date.split('/')[2]
+
+  if(month.length !== 2 || day.length !== 2 || year.length !== 4) return false;
+
+  if(Number(month) < 1 || Number(month) > 12) return false
+
+  if(Number(day) < 1) return false;
+
+  if(Number(year) < 1) return false;
+
+  if(Number(month) === '01')
+  return true;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 console.log('\n---------------TASK11---------------\n');
 /*
@@ -345,12 +449,24 @@ function secondMax(arr) {
   return Math.max(...filteredArr);
 };
 
+//const secondMax = arr => arr.sort((a, b) => b - a).filter(ele) => ele !== Math.max(...arr))[0] || arr[0];
+
+
+
 console.log(secondMax([7, 4, 4, 4, 23, 23, 23]));
 console.log(secondMax([3, 4, 5, 6]));
 console.log(secondMax([10]));
 
 
+// Bilal
+const secondMax = (arr) => {
+  const sortedArr = arr.sort((a,b) => b - a)
 
+  for(num of sortedArr){
+    if(num !== sortedArr[0]) return num;
+  }
+  return sortedArr[0]
+}
 
 
 
@@ -399,36 +515,68 @@ mostRepeated([10])  -> 10
 mostRepeated(["TechGlobal"])  ->  'TechGlobal'
 
 */
-function mostRepeated(arr) {
-  arr.sort();
+// function mostRepeated(arr) { 
+//   arr.sort();
   
-  let element = arr[0];
-  let currentCount = 1;
-  let maxCount = 1;
-  let mostRepeatedElement = arr[0];
+//   let element = arr[0];
+//   let currentCount = 1;
+//   let maxCount = 1;
+//   let mostRepeatedElement = arr[0];
 
-  for (let i = 1; i < arr.length; i++) {
-      if (arr[i] === element) {
-          currentCount++; 
-      } else {
-          if (currentCount > maxCount) {
-              maxCount = currentCount;
-              mostRepeatedElement = element;
-          }
-          element = arr[i];
-           currentCount = 1;
-      }
+//   for (let i = 1; i < arr.length; i++) {
+//       if (arr[i] === element) {
+//           currentCount++; 
+//       } else {
+//           if (currentCount > maxCount) {
+//               maxCount = currentCount;
+//               mostRepeatedElement = element;
+//           }
+//           element = arr[i];
+//            currentCount = 1;
+//       }
+//   }
+
+//   if (currentCount > maxCount) {
+//       mostRepeatedElement = element;
+//   }
+//   return mostRepeatedElement;
+// };
+
+
+// console.log(mostRepeated([4, 7, 4, 4, 4, 23, 23, 23]));
+// console.log(mostRepeated(["pen", "pencil", "pen", "123", "abc", "pen", "pencil"]));
+// console.log(mostRepeated([10]));
+// console.log(mostRepeated(["TechGlobal"]));
+ 
+//Bilal solution
+
+const mostRepeated = arr => {
+  let count = 0 ;
+  let mostRepeated;
+  let mostRepeatedCount = 0;
+
+  for( let ele of arr) {
+    if(count[ele]) count[ele]++;
+    else( count[ele]) = 1;
+
+    if(count[ele] > mostRepeatedCount) {
+      mostRepeatedCount = count[ele];
+      mostRepeated = ele;
+    }
   }
+  return mostRepeated;
+}
 
-  if (currentCount > maxCount) {
-      mostRepeatedElement = element;
-  }
-  return mostRepeatedElement;
-};
-
-
+ 
 console.log(mostRepeated([4, 7, 4, 4, 4, 23, 23, 23]));
 console.log(mostRepeated(["pen", "pencil", "pen", "123", "abc", "pen", "pencil"]));
 console.log(mostRepeated([10]));
 console.log(mostRepeated(["TechGlobal"]));
+
+
+
+
+
+
+
 

@@ -19,6 +19,7 @@
   
   
   // Prototype before ES6
+  
   function Teacher() {
   
   }

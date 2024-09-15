@@ -32,3 +32,8 @@ class Account {
   // Setting properties with set methods
   myAccount.setPassword('ABCD9999');
   console.log(myAccount.getPassword()); // ABCD9999
+
+
+
+
+

@@ -101,9 +101,6 @@ greet: higher order function (taking another function as an argument)
 getInfo: callback function (passed as an argument to another function)
 
 
-3 + 5 / 2     -> 5.5
-(3 + 5) / 2   -> 4
-
 
 [ 3, 5, 8, 15 ] -> [ 9, 15, 24, 45 ]
 

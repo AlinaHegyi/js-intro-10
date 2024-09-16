@@ -18,7 +18,6 @@ Extend from Customer
 constructor with below fields
 fname, lname, id, primeCode
 */
-
 /*
 Create a Customer object: John Doe 123
 Create a PrimeCustomer object: Alex Smith 789 ABC

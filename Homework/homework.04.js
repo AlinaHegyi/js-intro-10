@@ -434,7 +434,7 @@ function getDuplicates(arr){
   let dup = []
   for(let i = 0; i<=arr.length - 2; i++){
 
-      if(arr.includes(arr[i], i+1) && !dup.includes(arr[i])) dup.push(arr[i])
+      if(arr.includes(arr[i], i + 1) && !dup.includes(arr[i])) dup.push(arr[i])
   }
   return dup;
 }

@@ -29,7 +29,8 @@ Class members: properties, constructors, functions
 
 INHERITANCE: it is a common concept used in all the programming languages
 It increases code reusability by child classes from parent classes 
-Public properties, functions and constructors of the parent classes can be inherited by child classes
+Public properties, functions and constructors of the parent classes 
+can be inherited by child classes
 Private properties and functions in parent classes cannot be inherited 
 Parent cannot inherit from child 
 One child class can have ONLY parent 

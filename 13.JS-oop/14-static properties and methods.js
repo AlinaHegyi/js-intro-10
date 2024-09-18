@@ -5,6 +5,7 @@ console.log(Math.max(1, 2)); // max() is a static method of Math prototype
 
 /*
 static keyword
+
 static methods-properties: can be invoked/accessed with the className or ptototype
 */
 

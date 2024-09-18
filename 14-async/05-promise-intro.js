@@ -1,5 +1,4 @@
 
-
   const myPromise = new Promise((resolve, reject) => {
     let mode = false;
     if(mode) resolve('SUCCESS');
@@ -18,7 +17,7 @@
     });
   }
   
-  testAge(50)
+  testAge(18)
     .then((successMessage) => {console.log(successMessage)})
     .catch((errorMessage) => {console.log(errorMessage)});
 

@@ -10,11 +10,7 @@ function getStudents() {
 
 getStudents();
 
-
-
 //async await
-
-
 
 async function getInstructors() {
 

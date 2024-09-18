@@ -31,7 +31,6 @@ firstDuplicate([ 'foo', 'abc', '123', 'bar’ ]) -1
  }
 
 
-
 console.log(firstDuplicate([ 3, 7, 10, 0, 3, 10 ]));
 console.log(firstDuplicate([ 5, 7, 7, 0, 5, 10 ]));
 console.log(firstDuplicate([ 5, '5', 3, 7, 4 ]));
@@ -57,36 +56,40 @@ Count Vowels
 -> [ ]
 -> [ 'foo', 'a’ ] -> [ ]
 */
+function getDuplicates(arr) {
+    let dups = [];
+    let storeArr = [];
+     for (const num of arr) {
+      if(arr.indexOf(num) !== arr.lastIndexOf(num) && !storeArr.includes(num)) {
+         dups.push(num);
+     storeArr.push(num);
+      }
+     
+   }
+   return dups;
+}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+console.log(getDuplicates([ 0, -4, -7, 0, 5, 10, 45, -7, 0 ]))
+console.log(getDuplicates([ 'A', 'foo', '12', 12, 'bar', 'a', 'a', 'foo']))
 
 /*
 Write a function named as countVowels() which takes a string word as an argument 
 and returns the count of the vowel letters when invoked.
 NOTE: Vowel letters are A,E, O, U, I, a, e, o, u, i
 Examples:
-countVowels("Hello") countVowels("JavaScript is fun") countVowels("")
--> 2 -> 5 -> 0
+countVowels("Hello") //2
+ countVowels("JavaScript is fun") //5
+  countVowels("") //0
 */
 
+const countVowels = (word) => {
+  let vowels = 'aeiouAEIOU';
+     return word.split('').filter((ele) => vowels.includes(ele)).length;
+  }
 
+console.log(countVowels('hello'));
+console.log(countVowels('JavaScript is fun'));
+console.log(countVowels(''));
 
 
 

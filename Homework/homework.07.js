@@ -1,8 +1,4 @@
 
-const { CharacterHelper } = require('../utils/CharacterHelper.js');
-
-
-
 console.log('\n---------------TASK1---------------\n');
 
 /*
@@ -17,6 +13,22 @@ hasUpperCase("")  -> false
 */
 
 
+   //using regex
+
+
+function hasUpperCase(str) {
+  return str.split('').some((x) => /[A-Z]/.test(x));
+}
+
+console.log(hasUpperCase('javascript')); //false
+console.log(hasUpperCase('John')); //true
+console.log(hasUpperCase('$125.0')); //false
+console.log(hasUpperCase('')); //false
+
+
+
+// using ASCII code
+
 function hasUpperCase(str) {
     return str.split('').some(x => {
       return 65 <= x.charCodeAt(0) && x.charCodeAt(0) <= 90; 
@@ -28,11 +40,6 @@ console.log(hasUpperCase('John')); //true
 console.log(hasUpperCase('$125.0')); //false
 console.log(hasUpperCase('')); //false
 
-
-// function isUpperCase(char) { 
-//     let asciiChar = char.charCodeAt(0);
-//     return 65 <= asciiChar && asciiChar <= 90;
-// }
 
 
 

@@ -20,11 +20,6 @@ function hasUpperCase(str) {
   return str.split('').some((x) => /[A-Z]/.test(x));
 }
 
-console.log(hasUpperCase('javascript')); //false
-console.log(hasUpperCase('John')); //true
-console.log(hasUpperCase('$125.0')); //false
-console.log(hasUpperCase('')); //false
-
 
 
 // using ASCII code

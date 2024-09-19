@@ -835,8 +835,36 @@ const users = [
     }
 ];
   
+//Count how many users are older than 30    -> 2
 
-users.filter((users[0]) => {
-   if (users[0].age > 30)
+ function over30(users) { 
+   return users.filter((users) => users.age > 30).length;
 }
-    
+console.log(over30(users)); // 2
+
+//Count how many users live in Chicago      -> 2
+
+function inChicago(users) {
+   return users.filter((users) => {
+      let count = 0;
+       if(users.address.city === 'Chicago') count++;
+      return count;
+   }).length;
+}
+
+console.log(inChicago(users)); // 2
+
+
+
+
+/*
+Count how many users live in IL      -> 3
+Count how many users’ emails has Gmail domain   -> 2
+Find and store all the users name younger than 35     -> [ 'Tech', 'Jane', 
+'Alex' ]
+Find average of ages of all users     -> 28
+
+*/
+
+
+

@@ -113,6 +113,22 @@ reverseStringWords("I like JavaScript")
 */
 
 
+function reverseStringWord(s){
+let str = s.trim().split(' ').map((word) => {
+ return word.split('').reverse().join('');
+
+})
+return str.join(' ');
+} 
+ 
+
+
+console.log(reverseStringWord("Hello World"))
+console.log(reverseStringWord("I like JavaScript"))
+console.log(reverseStringWord("Hello"))
+console.log(reverseStringWord(" "))
+
+
 
 
 
@@ -121,13 +137,30 @@ and returns the count of the consonant letters when invoked.
 NOTE: A letter that is not vowel is considered as a consonant letter.
 Examples:
 countConsonants("Hello") 
-countConsonants("Hello World")
+countConsonants("Hello") 
+countConsonants("Hello") 
+countConsonants("Hello")
  countConsonants("JavaScript is fun")
   countConsonants("")
 
 -> 3 -> 8 -> 12 -> 0
 
 */
+ const countConsonants = (s) => {
+  let arr = s.toLowerCase().split('');
+  let vowels = 'aeiou';
+  let consonants = [];
+  for (const ele of arr) {
+    if (!vowels.includes(ele)) consonants.push(ele);
+    }
+  return consonants.length;
+ }
+
+console.log(countConsonants("Hello"));
+console.log(countConsonants("Hello World"));
+console.log(countConsonants("JavaScript is fun"));
+
+
 
 
 
@@ -138,17 +171,18 @@ Write a function named as countMultipleWords() which takes an array as an argume
 and returns the count of the elements that has multiple words when invoked.
 NOTE: Be careful about the extra whitespaces before and after the array element.
 Examples:
-countMultipleWords([ "foo", "", " ", "foo bar", " 
-countMultipleWords([ "foo", "bar", "foobar", " 
-countMultipleWords([ "f o o", "b a r", "foo bar", " 
+countMultipleWords([ "foo", "", " ", "foo bar", " foo" ])
+countMultipleWords([ "foo", "bar", "foobar", " foobar', 'foo', 'bar'])
+countMultipleWords([ "f o o", "b a r", "foo bar", 'foobar', 'foo', 'bar' ,'fooo ba']) 
 countMultipleWords([ ])
-foo" ])
-foobar foo bar
-" ]) " ])
+
 -> 1 -> 0 -> 4 -> 0
 
 */
-
+function countMultipleWords(arr) {
+  return arr.filter((ele) => ele.trim().includes(' ')).length;
+}
+  console.log(countMultipleWords(["f o o", "b a r", "foo bar", 'foobar', 'foo', 'bar' ,'fooo ba']))//4
 
 
 
@@ -177,6 +211,24 @@ fizzBuzz(9, 6)
 
 
 */
+
+function Fizzbuzz(n1, n2){
+  let max = Math.max(n1, n2);
+  let min = Math.min(n1, n2);
+  
+   for (let i = min; i <= max; i++){
+
+   }
+}
+
+
+
+
+console.log();
+
+
+
+
 
 
 

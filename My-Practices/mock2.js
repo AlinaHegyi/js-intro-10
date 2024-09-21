@@ -215,10 +215,14 @@ fizzBuzz(9, 6)
 function Fizzbuzz(n1, n2){
   let max = Math.max(n1, n2);
   let min = Math.min(n1, n2);
+  let arr = [];
   
    for (let i = min; i <= max; i++){
-
+    if(i )
+     arr.push(i);
+   
    }
+   return arr.join('|')
 }
 
 
@@ -437,9 +441,29 @@ arrFactorial([1, 2, 3 ,4]) arrFactorial([0, 5]) arrFactorial([5 , 0, 6]) arrFact
 
 
 
+function removeExtraSpaces(str){
+ return str.split(' ').filter((ele) => {
+  if(ele) return ele;
+ }).join(' ');
+}
 
 
 
+console.log(removeExtraSpaces('   HELLO   world  '));
+
+
+
+
+// Write a function named as fizzBuzz() which takes 2 number arguments and returns
+ //a string composed with below requirements when invoked.
+
+// You need to find all the numbers within the range of given 2 numbers (both inclusive)
+// and store them in a string from smallest to greatest number with a ' | ' separator for each number.
+// You will need to convert numbers divisible by 3 to 'Fizz'
+// You will need to convert numbers divisible by 5 to 'Buzz'
+// You will need to convert numbers divisible by both 3 and 5 to 'FizzBuzz'
+// The rest will stay the same.
+// NOTE: Make your code dynamic that works for any numbers. Assume you will not be given negative numbers.
 
 
 

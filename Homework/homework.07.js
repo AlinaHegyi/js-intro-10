@@ -130,10 +130,22 @@ middleInt(1, 1, 1)  -> 1
 middleInt(-1, 25, 10)  -> 10
 */
 
+// const middleInt = (n1, n2, n3) => {
+//     let sortedNums = [n1, n2, n3].sort((a, b) => a - b);
+//     return sortedNums[1];
+// }
+
+
+//bilal solution
+
 const middleInt = (n1, n2, n3) => {
-    let sortedNums = [n1, n2, n3].sort((a, b) => a - b);
-    return sortedNums[1];
+  if(n1 >= n2 && n1 <= n3) return n1;
+  else if(n1 >= n1 && n2 <= n3) return n2;
+  return n3;
+
 }
+// another Bilal solution
+
 
 console.log(middleInt(1, 2, 2)); //2
 console.log(middleInt(5, 5, 8)); //5
@@ -145,6 +157,7 @@ console.log(middleInt(-1, 25, 10)); //10
 
 
 console.log('\n---------------TASK6---------------\n');
+
 /*
 Requirement:
 Write a function named sumOfDigits() which takes a string argument and 
@@ -153,7 +166,6 @@ Examples:
 sumOfDigits("Javascript")  -> 0
 sumOfDigits("John’s age is 29")  -> 11
 sumOfDigits("$125.0")  -> 8
-
 */
 
 
@@ -172,8 +184,8 @@ console.log(sumOfDigits("Javascript")); // 0
 console.log(sumOfDigits("John's age is 29")); // 11
 console.log(sumOfDigits("$125.0")); // 8
 
-
-
+//// Bilal
+return str.split('').filter(ele => ele >= '0' && ele <= '9').reduce((sum, num) => sum + Number(num), 0)
 
 
 console.log('\n---------------TASK7---------------\n');
@@ -188,7 +200,7 @@ arrFactorial([5 , 0, 6])  -> [120, 1, 720]
 arrFactorial([])  -> []
 
 */
- const arrFactorial = (arr) => {
+ const arrFactoriall = (arr) => {
   return arr.map((num) => {
     let result = 1;
     for( let i = 1; i <= num; i++){
@@ -197,6 +209,20 @@ arrFactorial([])  -> []
     return result;
   });
  };
+
+ //Bilal solution
+
+ const arrFactorial = (arr) => {
+  return arr.map(ele => {
+  let factorial = 1;
+  for (i = 2; i <= ele; i++){
+    factorial *= i;
+  }
+  return factorial;
+ })
+ }
+
+
 
 console.log(arrFactorial([1, 2, 3 ,4]));
 console.log(arrFactorial([0, 5]));
@@ -217,25 +243,37 @@ categorizeCharacters("abc123$#%")  -> [ 'abc', '123', '$#%' ]
 categorizeCharacters("12ab$%3c%")  -> [ 'abc', '123', '$%%' ]
 */
 
+// const categorizeCharacters = (str) => {
+//   let letters = '';
+//   let digits = '';
+//   let specials = '';
+
+//   for (const char of str) {
+//     let charCode = char.charCodeAt(0);
+
+//     if ((65 <= charCode && charCode <= 90) || (97 <= charCode && charCode <= 122)) {
+//       letters += char;  
+//     } else if (48 <= charCode && charCode <= 57) {
+//       digits += char; 
+//     } else {
+//       specials += char;  
+//     }
+//   }
+
+//   return [ letters, digits, specials ];
+// };
+
 const categorizeCharacters = (str) => {
-  let letters = '';
-  let digits = '';
-  let specials = '';
+  return str.split('').reduce((cat, ele) => {
+   if (ele.toLowerCase() >= 'a' && ele.toLowerCase() <= 'z') cat[0] += ele;
+   else if(ele >= '0' && ele <= '9') cat[1] += ele
+   else if(ele !== ' ') cat[2] += ele
 
-  for (const char of str) {
-    let charCode = char.charCodeAt(0);
+   return cat;
 
-    if ((65 <= charCode && charCode <= 90) || (97 <= charCode && charCode <= 122)) {
-      letters += char;  
-    } else if (48 <= charCode && charCode <= 57) {
-      digits += char; 
-    } else {
-      specials += char;  
-    }
-  }
-
-  return [ letters, digits, specials ];
-};
+  }, ['', '', '' ])
+ 
+}
 
 console.log(categorizeCharacters("1234"));       //  [ '', '1234', '' ]
 console.log(categorizeCharacters("abc123$#%"));  //  [ 'abc', '123', '$#%' ]

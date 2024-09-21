@@ -737,9 +737,19 @@ return words.join(' ');
 
 
 
-5.
-
-
+5.Write a function named hasUpperCase() which takes a string argument and 
+return true if there is an uppercase letter and false otherwise.
+*/
+function hasUpperCase(str) {
+    return str.split('').some(x => {
+      return 'A' <= x && x <= 'Z' ; 
+    });
+  }
+  
+console.log(hasUpperCase('javascript')); //false
+console.log(hasUpperCase('John')); //true
+console.log(hasUpperCase('$125.0')); //false
+console.log(hasUpperCase('')); //false
 
 
 6.
@@ -767,7 +777,7 @@ return words.join(' ');
 
 
 
-*/
+
 /*
 TASK-1You are given a JS Array below:
 Count how many users are older than 30    -> 2
@@ -865,6 +875,133 @@ console.log(inChicago(users)); // 2
 Find average of ages of all users     -> 28
 
 */
+
+
+
+/*
+Requirement:
+Write a function named categorizeCharacters() which takes a string word as 
+argument and return an array as letters at index of 0, digits at index of 1 and 
+specials at index of 2. 
+Examples:
+categorizeCharacters("1234")  -> [ '' , '1234', '' ] 
+categorizeCharacters("abc123$#%")  -> [ 'abc', '123', '$#%' ]
+categorizeCharacters("12ab$%3c%")  -> [ 'abc', '123', '$%%' ]
+*/
+
+const categorizeCharacters = (str) => {
+  return str.split('').reduce((cat, ele) => {
+   if (ele.toLowerCase() >= 'a' && ele.toLowerCase() <= 'z') cat[0] += ele;
+   else if(ele >= '0' && ele <= '9') cat[1] += ele;
+   else if(ele !== ' ') cat[2] += ele
+
+   return cat;
+
+  }, ['', '', '' ])
+ 
+}
+
+console.log(categorizeCharacters("1234"))
+console.log(categorizeCharacters("abc123$#%"))
+console.log(categorizeCharacters("12ab$%3c%"))
+
+
+
+
+
+
+
+
+
+
+
+
+function removeExtraSpaces(str){
+   return str.split(' ').filter((ele) => {
+    if(ele) return ele;
+   }).join(' ');
+  }
+  
+  
+  
+  console.log(removeExtraSpaces('   HELLO   world  '));
+  
+
+
+
+  
+  
+  
+  // Write a function named as fizzBuzz() which takes 2 number arguments and returns
+   //a string composed with below requirements when invoked.
+  
+  // You need to find all the numbers within the range of given 2 numbers (both inclusive)
+  // and store them in a string from smallest to greatest number with a ' | ' separator for each number.
+  // You will need to convert numbers divisible by 3 to 'Fizz'
+  // You will need to convert numbers divisible by 5 to 'Buzz'
+  // You will need to convert numbers divisible by both 3 and 5 to 'FizzBuzz' 
+  // The rest will stay the same.
+  // NOTE: Make your code dynamic that works for any numbers. Assume you will not be given negative numbers.
+  
+  
+function fizzBuzz(n1, n2){
+   let max = Math.max(n1, n2);
+   let min = Math.min(n1, n2);
+   let arr = [];
+
+for(let i = min; i <= max; i++) {
+   if (i % 15 === 0) arr.push('FizzBuzz');
+   if (i % 5 === 0) arr.push('Buzz');
+   if (i % 3 === 0) arr.push('Fizz');
+   else arr.push(i);
+}
+ return arr.join(' | ');
+}
+
+
+
+console.log(fizzBuzz(3, 17))
+
+
+// Write a function named countWords() which takes a string argument and returns the total 
+// count of words in the given string when invoked. 
+// NOTE: Be careful about the extra whitespaces before and after the string.
+
+
+
+const countWords = (str) => str.split(' ').filter((ele) => ele !== '').length;
+
+console.log(countWords("     Javascript is fun       "));   		    
+console.log(countWords("Cypress is an UI automation tool.    "));   	
+console.log(countWords("1 2 3 4"));   					           
+
+
+
+
+
+
+// Write a function named countMultipleWords() which takes an array as an 
+// argument and returns the count of the elements that have multiple words when invoked. 
+// NOTE: Be careful about the extra
+//  whitespaces before and after the array element.
+
+
+const countMultipleWords = (arr) => {
+   return arr.reduce((count, ele) => {
+    let arrEle = ele.trim().split(' ');
+    if( arrEle.length !== 1) count += 1;
+    return count;
+   }, 0)
+  
+}
+
+console.log(countMultipleWords([ "foo", "", "	", "foo bar", " 	foo" ]))   	    
+console.log(countMultipleWords([ "foo", "bar", "foobar", " 	foobar   " ]))   	    
+console.log(countMultipleWords([ "f o o", "b a r", "foo bar", "     foo bar   " ]))  
+countMultipleWords([ ])   						                       
+
+console.log('  	foo'.split(' '))
+
 
 
 

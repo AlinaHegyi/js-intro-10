@@ -1,0 +1,144 @@
+
+
+09-21-2024 JS Modules
+
+
+
+ 1. Common JS Modules
+  - using module.export and require()
+   -supported by node.js for server side web applications
+
+ 2. ES6 Modules
+   - export and import: suported by all browsers
+
+
+HOW TO RUN JS CODE
+
+  - Node.JS
+  -Browser
+  - Extensions (you'll never use this in a work environment)
+
+
+
+  static methods and properties can be accessed with the className while non-static ones can be accessed
+  with an object of the class.
+
+  class A {
+    static propertyA 'Hi';
+   propertyB = 'Hello'; 
+    }
+
+static funcA() {
+    console.log('I am static');
+
+}
+
+funcB () {
+    console.log('I am not static');
+}
+
+
+//ACCESING STATIC PROPERTIERS
+
+Apple.propertyA; // 'Hi'
+Apple.funcA(); // 'I am static'
+
+
+
+const1 = new Apple;
+
+If the method executes the same task for every single object
+of the class it makes sense to use static methods.
+
+
+
+class Batch10Student {
+    constructor(fullname, age) {
+    this.fullname = fullname;
+    this.age = ade;
+    }
+
+  static getprogramNmae() {
+    return 'SDET';
+  }
+
+  getFullName() {
+    return this.fullName;
+  }
+
+  getAge() {
+    return this.age;
+  }
+}
+
+
+const bermet = new Batch10Student('Bermet S', 20);
+
+const alina = new Batch10Student('Alina', 21);
+
+bermet.getFullname();
+
+Batch10Student.getProgramName();
+
+
+
+class AppleStore {
+
+  constructor(id, city, state, zip) {
+
+  }
+
+  static getIphone16ProMaxPrice() {
+
+  }
+
+}
+
+
+
+
+
+
+
+HTML = HyperText Markup Language
+It is not a programming language because you can't create functions with it.
+
+
+
+Web Application: any app you visit on browsers
+Mobile Application: Any app you download from AppStore or GooglePlay
+Hybrid Application: You can use on web and also install on your mobile devices
+
+Desktop application: Robot framework (Python)
+
+
+Web application: it consists of many web pages
+Each web page is created using HTML
+Each web page is created using web elements
+
+Each web element is represented by an HTML tag
+ <p>/p<
+ <img/>
+ <div></div>
+
+ <button>Apply Now</button>
+ opening tag : <button>Apply
+ closing tag:  /button>
+
+ Opening and closing tag / self closing tag <img/>
+
+
+ Tags may have many properties/attributes.
+  All the properties are added as key-value pairs in opening tags
+
+ <tagName>  
+
+
+
+
+
+
+
+
+
+

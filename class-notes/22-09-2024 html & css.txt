@@ -1,0 +1,35 @@
+
+
+Stands for HyperText Markup Language
+
+Standard markup language for creating Web pages
+Describes the structure of a Web page
+Consists of a series of elements
+Tell the browser how to display the content
+HTML elements are represented by tags
+
+
+
+A complete website needs JavaScript, HTML and CSS.
+
+JavaScript helps with adding interativity to a web place 
+HTML is the skeleton of the app
+CSS adds styling features 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

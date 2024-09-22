@@ -995,12 +995,19 @@ const countMultipleWords = (arr) => {
   
 }
 
-console.log(countMultipleWords([ "foo", "", "	", "foo bar", " 	foo" ]))   	    
-console.log(countMultipleWords([ "foo", "bar", "foobar", " 	foobar   " ]))   	    
-console.log(countMultipleWords([ "f o o", "b a r", "foo bar", "     foo bar   " ]))  
-countMultipleWords([ ])   						                       
 
-console.log('  	foo'.split(' '))
+function countMultipleWords(arr) {
+   return arr.filter((ele) => ele.trim().includes(' ')).length;
+ }
+
+
+
+console.log(countMultipleWords([ "foo", "", "	", "foo bar", " 	foo" ]))   // 1	    
+console.log(countMultipleWords([ "foo", "bar", "foobar", " 	foobar   " ]))   	   // 0 
+console.log(countMultipleWords([ "f o o", "b a r", "foo bar", "     foo bar   " ]))  // 4
+console.log(countMultipleWords([ ]));   	// 0					                       
+
+
 
 
 

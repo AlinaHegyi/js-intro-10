@@ -212,29 +212,23 @@ fizzBuzz(9, 6)
 
 */
 
-function Fizzbuzz(n1, n2){
+function fizzBuzz(n1, n2){
   let max = Math.max(n1, n2);
   let min = Math.min(n1, n2);
   let arr = [];
-  
-   for (let i = min; i <= max; i++){
-    if(i )
-     arr.push(i);
-   
-   }
-   return arr.join('|')
+
+for(let i = min; i <= max; i++) {
+  if (i % 15 === 0) arr.push('FizzBuzz');
+  if (i % 5 === 0) arr.push('Buzz');
+  if (i % 3 === 0) arr.push('Fizz');
+  else arr.push(i);
+}
+return arr.join(' | ');
 }
 
 
 
-
-console.log();
-
-
-
-
-
-
+console.log(fizzBuzz(3, 17))
 
 
 
@@ -256,14 +250,29 @@ isPalindrome("A") -> true
 isPalindrome("") -> true
 
 */ 
+ const isPalindrome = (str) => {
+  let newStr = str.toLowerCase();
+  let reversed = newStr.split('').reverse().join('');
+   return newStr === reversed;
+ }
 
 
-/*www.techglobalschool.com
+ console.log(isPalindrome("Hello"))//f
+ console.log(isPalindrome("Kayak"));//t
+ console.log(isPalindrome("civic"));//t
+ console.log(isPalindrome("abba"));//t
+ console.log(isPalindrome("ab a"));//f
+ console.log(isPalindrome("123454321"));//f
+ console.log(isPalindrome("A"));//t
+ console.log(isPalindrome(""));//t
+
+/*
 Prime Number
 Write a function named as isPrime() which takes a number as an argument and returns true 
 if the number is prime or returns false otherwise when invoked.
 NOTE: Mathematically, Prime number is a number that can be divided only by itself and 1.
- It cannot be divided by any other number. The smallest prime number is 2 and 2 is the only even prime number.
+ It cannot be divided by any other number. The smallest prime number is 2 and 2 is 
+ the only even prime number.
 Examples: 2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31...
 NOTE: The smallest prime number is 2 and there is no negative prime numbers.
 Examples:
@@ -271,8 +280,18 @@ isPrime(5) isPrime(2) isPrime(29) isPrime(-5) -> false isPrime(0) -> false isPri
 */
 
 
-
-
+const isPrime = (num) => {
+ for(let i = 2; i <= Math.sqrt(num); i++) {
+  if (num % 2 === 0) return false;
+ }
+ return true;
+}
+console.log(isPrime(5));
+console.log(isPrime(2));
+console.log(isPrime(29));
+console.log(isPrime(-5));
+console.log(isPrime(0));
+console.log(isPrime(1));
 
 
 
@@ -450,23 +469,6 @@ function removeExtraSpaces(str){
 
 
 console.log(removeExtraSpaces('   HELLO   world  '));
-
-
-
-
-// Write a function named as fizzBuzz() which takes 2 number arguments and returns
- //a string composed with below requirements when invoked.
-
-// You need to find all the numbers within the range of given 2 numbers (both inclusive)
-// and store them in a string from smallest to greatest number with a ' | ' separator for each number.
-// You will need to convert numbers divisible by 3 to 'Fizz'
-// You will need to convert numbers divisible by 5 to 'Buzz'
-// You will need to convert numbers divisible by both 3 and 5 to 'FizzBuzz'
-// The rest will stay the same.
-// NOTE: Make your code dynamic that works for any numbers. Assume you will not be given negative numbers.
-
-
-
 
 
 

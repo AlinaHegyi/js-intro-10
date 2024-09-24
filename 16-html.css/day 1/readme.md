@@ -26,6 +26,7 @@
   - `<ul></ul>` - unordered
   - `<ol></ol>` - ordered
 --**Link element**: `<a href="url"></a>` Creates a link
+
 ## CSS
 - 3 ways of applying CSS to HTML
 
@@ -39,7 +40,8 @@
 2. Using id
 3. Using class
 
-** Main difference between `id` and `class`: 
+** Main difference between `id` and `class`:
+
 - ID is used of unique elements.
 - Where CLASS is used for common elements.
 

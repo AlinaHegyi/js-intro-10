@@ -179,9 +179,13 @@ getCommons( ["Javascript", "C#", "C#"], ["Python", "C#", "C++"] ) 	-> ["C#"]
 
 */
 
+   const getCommons = (arr1, arr2) => {
+    return arr1.filter(word => arr2.includes(word));
+}
 
-
-
+console.log(getCommons(["Javascript", "is", "fun"], ["abc", "xyz", "123"]));
+console.log(getCommons(["Javascript", "is", "fun"], ["Javascript", "C#", "Python"]));
+console.log(getCommons(["Javascript", "C#", "C#"], ["Python", "C#", "C++"]));
 
 
 
@@ -197,4 +201,22 @@ noXInVariables(["xyXyxy", "Xx", "ABC"]) 	-> ["yyy", "ABC"]
 
 */
 
+const noXInVariables = (arr) => {
+    return arr.map(item => {
+        if (typeof item === 'string') {
+            let newItem = '';
+            for (let char of item) {
+                if (char !== 'x' && char !== 'X') {
+                    newItem += char;
+                }
+            }
+            return newItem;
+        }
+        return item;
+    }).filter(item => item !== '');
+}
 
+console.log(noXInVariables(["abc", 123, "#$%"]));
+console.log(noXInVariables(["xyz", 123, "#$%"]));
+console.log(noXInVariables(["x", 123, "#$%"]));
+console.log(noXInVariables(["xyXyxy", "Xx", "ABC"]));

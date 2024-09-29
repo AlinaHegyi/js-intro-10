@@ -342,16 +342,6 @@ add([-5, 6, -3, 11], [5, -6, 3, -11]) 		-> [0, 0, 0, 0]
 
 */
 
-// function add(arr1, arr2) {
-//    let sumOfArrays = [];
-
-//    for (let i = 0; i < arr1.length; i++) {
-//      sumOfArrays.push(arr1[i] + arr2[i]);
-//    }
-
-//    return sumOfArrays;
-//  }
-
 
 const add = (arr1, arr2) => {
    if (arr1.length < arr2.length) {

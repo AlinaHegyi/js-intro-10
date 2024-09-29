@@ -20,7 +20,7 @@ firstDuplicate([ 'foo', 'abc', '123', 'bar’ ]) -1
    function firstDuplicate(arr) {
      let seen = [];  // Array to keep track of seen elements
  
-     for (let ele of arr) {
+     for (const ele of arr) {
          if (seen.includes(ele)) {
              return ele;  // Return the first duplicate when found, code finishes.
          }
@@ -159,12 +159,6 @@ countConsonants("Hello")
 console.log(countConsonants("Hello"));
 console.log(countConsonants("Hello World"));
 console.log(countConsonants("JavaScript is fun"));
-
-
-
-
-
-
 
 /*
 Write a function named as countMultipleWords() which takes an array as an argument 
@@ -312,6 +306,10 @@ add([10,3,6,3,2],[6,8,3,0,0,7,5,10,34])
 
 
 
+
+
+
+
 /*
 Write a function named noA() which takes an array of strings as argument and will return
  a new array with all elements starting with "A" or "a" replaced with "###".
@@ -323,6 +321,22 @@ noA(["javascript", "hello", "123", "xyz"])
 ["###", "123", "###", "javascript"] -> 
 ["###", "###", "###", "###", "###"]
 */
+
+const noA = (arr) => {
+return arr.map((ele) => {
+  if(ele[0] ==='A' || ele[0] === 'a') {
+   return ele[0] = '###';
+  }
+  return ele;
+})
+}
+
+console.log(noA(["apple", "jiku", "ABC", "Alex", "A"]));
+
+
+
+
+
 
 
 
@@ -346,8 +360,18 @@ no3and5([7, 4, 11, 23, 17])
 
 */
 
+const no3And5 = (arr) => {
+  return arr.map((n) => {
+    if (n % 15 === 0) return 101;
+    if (n % 5 === 0) return 99; 
+    if (n % 3 === 0) return 100; 
+    else return n;
+  })
+}
 
-
+console.log(no3And5([7, 4, 11, 23, 17]));
+console.log(no3And5([3, 4, 5, 6]));
+console.log(no3And5([10, 11, 12, 13, 14, 15]));
 
 
 
@@ -363,11 +387,13 @@ no13([13, 13, 13 , 13, 13]) no13([])
 -> [1, 2, 3 ,4] -> [0, 2, 3]
 -> [0, 0, 0, 0, 0]
 */
+ const no13 = (arr) => {
+    return arr.map((ele) => ele === 13 ? 0 : ele);
+    }
 
-
-
-
-
+console.log(no13([1, 2, 3, 4]))
+console.log(no13([13, 2, 33, 4]))
+console.log(no13([3, 12, 13, 13, 13]))
 
 
 /*Write a function named removeDuplicates() which takes an array argument and 
@@ -379,34 +405,40 @@ removeDuplicates([0, -1, -2, -2, -1])
 removeDuplicates(["abc", "xyz", "123", "ab", "abc", "ABC"]) -> ["abc", "xyz", "123", "ab", "ABC"]
  removeDuplicates(["1", "2", "3", "2", "3"]) -> ["1", "2", "3"]
 
-
 */
+const removeDuplicates = (arr) => {
+  newArr = [];
+   arr.forEach((ele) => {
+  if(!newArr.includes(ele)) newArr.push(ele);
+   })
+  return newArr;
+    }
+
+console.log(removeDuplicates([10, 20, 35, 20, 35, 60, 70, 60]));
+console.log(removeDuplicates([1, 2, 5, 2, 3]));
+console.log(removeDuplicates(["abc", "xyz", "123", "ab", "abc", "ABC"]));
+
+
 
 
 /*
 Write a function named noDigit() which takes a string argument and 
 returns a new string with all digits removed from the original string.
-Examples:
-noDigit("")
-noDigit("Javascript")
- noDigit("123Hello") 
-noDigit("123Hello World149")
- noDigit("123Tech456Global149")
-
--> ""
--> "Javascript" -> "Hello"
--> "Hello World” -> "TechGlobal"
 */
+const noDigit = (str) => {
+  return str.split('').filter(char => isNaN(char) || char === ' ').join('');
+}
 
-
-
+console.log(noDigit(""));
+console.log(noDigit("Javascript"));
+console.log(noDigit("123Hello"));
+console.log(noDigit("123Hello World149"));
+console.log(noDigit("123Tech456Global149"));
 
 
 /*
 No Vowel
--> ""
--> "Javascript" -> "Hello"
--> "Hello World” -> "TechGlobal"
+
 Write a function named noVowel() which takes a string argument and returns 
 a new string with all vowels removed from the original string.
 Examples:
@@ -416,10 +448,20 @@ noVowel("Javascript") -> "Jvscrpt"
 noVowel("") -> ""
 noVowel("125$") -> "125$"
 */
+const noVowel = (str) => {
+  let vowels = 'aeiouAEIOU';
+  let newStr = '';
+  for (const char of str) {
+    if (!vowels.includes(char)) newStr += char;
+  }
+  return newStr;
+}
 
-
-
-
+console.log(noVowel("TechGlobal"));
+console.log(noVowel("AEOxyz"));
+console.log(noVowel("Javascript"));
+console.log(noVowel(""));
+console.log(noVowel("125$"));
 
 
 /*
@@ -435,40 +477,124 @@ sumOfDigits("Javascript")
 -> 0 -> 11 -> 8 -> 0
 */
 
-
-
+const sumOfDigits = (str) => {
+  let sum = 0;
+   for (let i = 0; i < str.length; i++) {
+    if (!isNaN(str[i]) && str[i] !== ' ') {
+    sum += parseInt(str[i]);
+    }
+   }
+   return sum;
+}
+console.log(sumOfDigits("Javascript"));
+console.log(sumOfDigits("John’s age is 29"));
+console.log(sumOfDigits("$125.0"));
+console.log(sumOfDigits(""));
 
 
 /*
 Write a function named arrFactorial() which takes an array of numbers as argument
  and return the array with every number replaced with their factorials.
 Examples:
-arrFactorial([1, 2, 3 ,4]) arrFactorial([0, 5]) arrFactorial([5 , 0, 6]) arrFactorial([])
--> [1, 2, 6, 24] -> [1,120]
--> [120, 1, 720] -> []
+arrFactorial([1, 2, 3 ,4])-> [1, 2, 6, 24]
+ arrFactorial([0, 5]) ->[1,120]
+ arrFactorial([5 , 0, 6])-> [120, 1, 720]
+  arrFactorial([]) -> []
+
 */
 
-
-
-
-
-
-
-
-
-
-
-
-
-function removeExtraSpaces(str){
- return str.split(' ').filter((ele) => {
-  if(ele) return ele;
- }).join(' ');
+const arrFactorial = (arr) => {
+  return arr.map(ele => {
+    let factorial = 1;
+     for (let i = 1; i <= ele; i++) {
+      factorial *= i;
+     }
+     return factorial;
+});
 }
 
 
+console.log(arrFactorial([1, 2, 3 ,4]));
+console.log(arrFactorial([0, 5]));
+console.log(arrFactorial([5 , 0, 6]));
+console.log(arrFactorial([]));
 
-console.log(removeExtraSpaces('   HELLO   world  '));
+
+// Write a function named as removeExtraSpaces() 
+//which takes a string word as an argument and returns the string
+// back with all extra spaces removed when invoked.
+
+// Examples:
+// removeExtraSpaces("Hello")   				        -> "Hello"
+// removeExtraSpaces("  	Hello    World 	")   		-> "Hello World"
+// removeExtraSpaces(" 	JavaScript is      	fun")   -> "JavaScript is fun"
+//removeExtraSpaces("")   					        -> ""
+
+
+const removeExtraSpaces = (str) => {
+  return str.trim().split(' ').filter((ele) => {
+    if (ele !== ' ') return ele;
+  }).join(' ');
+}
+
+function removeExtraSpaces(str){
+  return str.split(' ').filter((ele) => {
+   if(ele) return ele;
+  }).join(' ');
+ }
+ 
+ 
+ 
+ console.log(removeExtraSpaces('   HELLO   world  '));
+ 
+/*
+Write a function named as getEvens() which takes 2 number arguments 
+and returns all the even numbers as an array stored from smallest even number
+ to greatest even number when invoked. NOTE: Make your code dynamic that works for
+  any numbers and return an empty array if there are no even numbers 
+  in the range of given 2 numbers. Assume you will not be given negative numbers.
+
+Examples:
+getEvens(2, 7)  	-> [ 2, 4, 6 ]
+getEvens(17, 5)  	-> [ 6, 8, 10, 12, 14, 16 ]
+getEvens(4, 4)  	-> [ 4 ]
+getEvens(3, 3)  	-> [ ]
+*/
+const getEvens = (n1, n2) => {
+  let arr = [];
+  for (i = Math.min(n1, n2); i <= Math.max(n1, n2); i++) {
+    if (i % 2 === 0) arr.push(i);
+  }
+  return arr.sort((a, b) => a - b);
+  }
+
+// Write a function named as getMultipleOf5() which takes 2 number arguments 
+// and returns all the numbers divisible by 5 as an array stored from first found match 
+// to last found match when invoked. NOTE: Make your code dynamic that works for any numbers and 
+// return an empty array if there are no numbers divisible by 5 in the range of given 2 numbers. 
+//Assume you will not be given negative numbers.
+
+// Examples:
+// getMultipleOf5(3, 17)  	-> [ 5, 10, 15]
+// getMultipleOf5(23, 5)  	-> [ 20, 15, 10, 5 ]
+// getMultipleOf5(5, 5)  	-> [ 5 ]
+//getMultipleOf5(2, 4)  	-> [ ]
+
+const getMultipleOf5 = (n1, n2) => {
+  let max = Math.max(n1, n2);
+  let min = Math.min(n1, n2);
+  let arr = [];
+  for (let i = min; i <= max; i++) {
+    if( i % 5 === 0) arr.push(i);
+  }
+  if (n1 > n2) return arr.reverse();
+  return arr;
+}
+
+console.log(getMultipleOf5(3, 17));
+console.log(getMultipleOf5(23, 5));
+console.log(getMultipleOf5(5, 5));
+console.log(getMultipleOf5(2, 4));
 
 
 

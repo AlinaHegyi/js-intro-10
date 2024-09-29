@@ -7,7 +7,7 @@
   - type: text, email, number, password, radio, checkbox
 - **button**: Used to submit form data
 - **select**: Used to create dropdowns
-  - **option**: child of select 
+- **option**: child of select 
 - **textarea**: Used to accept longer texts
 
 

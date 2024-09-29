@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Working with Node content</h1>
+
+<div id="box">
+
+    <!-- empty -->
+</div>
+<script>
+const box = document.getElementById('box');
+/*
+innerHTML
+*/
+
+
+box.innerHTML = 'Box content'; //text
+box.innerHTML = '<p>This is paragraph inside box</p>' //
+
+
+//problem - last innerHTML is overriding previous ones
+
+box.innerHTML += '<p>Last sentence in box</p>'
+
+/*textContent
+*/
+ box.textContent += '<p>Text content</p>'; // can't pass HTML
+ box.textContent += 'Text content'; //WORKS FINE
+
+/*innerText
+*/
+ box.innerText += '<p>inner content</p>';
+ box.innerText += 'inner content';
+
+
+
+const h4El = document.createElement('h4');
+console.log(h4El);
+
+h4El.innerHTML = 'h4 element content';
+console.log(h4El);
+
+
+//add element to the DOM
+//box.innerHTML = h4El; //error
+
+/**
+ * append() or appendChild()
+ * */
+ box.append(h4El);
+
+const h5El = document.createElement('h5');
+h5El.textContent = 'h5 text content';
+box.appendChild(h5El);
+
+
+//add multiple nodes
+
+const p1 = document.createElement('p');
+h5El.textContent = 'p1 text content';
+
+const p2 = document.createElement('p');
+h5El.textContent = 'p2 text content';
+
+const p3 = document.createElement('p');
+h5El.textContent = 'p3 text content';
+
+const p4 = document.createElement('p');
+h5El.textContent = 'p4 text content';
+
+
+box.append(p1, p2);// works fine
+box.appendChild(p3, p4); // no errors but only adds the first one
+
+
+</script>
+
+</body>
+</html>

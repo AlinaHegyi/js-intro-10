@@ -26,7 +26,11 @@ noSpace("Tech Global")  -> "TechGlobal"
 
 const noSpace = (str) => str.split(' ').join('');
 
-
+console.log(noSpace(''));
+ console.log(noSpace("Javascript"));
+ console.log(noSpace("    Hello   "));
+ console.log(noSpace(" Hello World   "));
+ console.log(noSpace("Tech Global"));
 
 
 console.log('\n---------------TASK02---------------\n');

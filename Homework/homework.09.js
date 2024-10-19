@@ -69,14 +69,6 @@ console.log(fizzBuzz2(2)); // [ 1, 2 ]
 
 
 
-
-
-
-
-
-
-
-
 console.log('\n---------------TASK3---------------\n');
 
 /**Requirement:
@@ -90,26 +82,55 @@ findSumNumbers("525") -> 525
 findSumNumbers("3 for 10 dollars") -> 13
  */
 
-function findSumNumbers(str) {
-    let sum = 0;
-    let currentNumber = '';
+// function findSumNumbers(str) {
+//     let sum = 0;
+//     let currentNumber = '';
 
-    for (let i = 0; i < str.length; i++) {
-        let char = str[i];
+//     for (let i = 0; i < str.length; i++) {
+//         let char = str[i];
 
-        if (char >= '0' && char <= '9') {
-            currentNumber += char;
-        } else {
-            if (currentNumber !== '') {
-                sum += parseInt(currentNumber);
-                currentNumber = '';
-            }
-        }
-    } if (currentNumber !== '') {
-        sum += parseInt(currentNumber);
+//         if (char >= '0' && char <= '9') {
+//             currentNumber += char;
+//         } else {
+//             if (currentNumber !== '') {
+//                 sum += parseInt(currentNumber);
+//                 currentNumber = '';
+//             }
+//         }
+//     } if (currentNumber !== '') {
+//         sum += parseInt(currentNumber);
+//     }
+//     return sum;
+//}
+
+//Bilal solution
+
+const findSumNumbers = str => {
+   let total = 0;
+   let num = '';
+ for ( let char of str) {
+    if(char >= '0' && char <= '9') num += char;
+    else{
+        total += Number(num);
+        num = '';
     }
-    return sum;
-}
+    if(num) total += Number(num);
+    return total;
+ }
+};
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 console.log(findSumNumbers("abc$")); // 0
@@ -117,6 +138,8 @@ console.log(findSumNumbers("a1b4c 6#")); // 11
 console.log(findSumNumbers("ab110c045d")); // 155
 console.log(findSumNumbers("525")); // 525
 console.log(findSumNumbers("3 for 10 dollars")); // 13
+
+
 
 console.log('\n---------------TASK4---------------\n');
 
@@ -178,18 +201,23 @@ countOccurrencesOfCharacters("aaAAa") 	-> "2a2A1a”
 countOccurrencesOfCharacters("www" ) 	-> "3w"
  */
  const countOccurencesOfCharacters = (str) => {
+   let count = 1;
+   let result = '';
+   let currChar = str[0];
+
    if (str === '') return '';
-   let counter = 1;
-   let newStr = '';
-   for( let i = 0; i <= str.length; i++){
-    if(str[i] === str[i + 1]) return counter++;
+
+   for( let i = 1; i <= str.length; i++){
+    if(str[i] === currChar) count++;
     else {
-        newStr += counter + str[i];
-        counter = 1;
+        result += count + currChar;
+        count = 1;
+        currChar = str[i];
     }
    }
-   return newStr;
+   return result;
  }
+
 
 console.log(countOccurencesOfCharacters(''));
 console.log(countOccurencesOfCharacters('abc'));
@@ -217,18 +245,31 @@ fibonacciSeries1(2) 	-> [0, 1]
 //fibonacci= each number equals the sum of previous two numbers
 //
 
-const fibonacciSeries1 = (n) => {
-    if (n <= 0) return []; 
+// const fibonacciSeries1 = (n) => {
+//     if (n <= 0) return []; 
+//     if (n === 1) return [0]; 
+//     if (n === 2) return [0, 1]; 
+
+//     let array = [0, 1];
+//     for (let i = 2; i < n; i++) {
+//         let nextNum = array[i - 1] + array[i - 2]; 
+//         array.push(nextNum);
+//     }
+//     return array;
+//};
+
+const fibonacciSeries1 = (n) => { 
     if (n === 1) return [0]; 
     if (n === 2) return [0, 1]; 
 
-    let array = [0, 1];
-    for (let i = 2; i < n; i++) {
-        let nextNum = array[i - 1] + array[i - 2]; 
-        array.push(nextNum);
-    }
-    return array;
+   let result = [0, 1];
+   for ( let i = 2; i <= n; i++) {
+ result.push(result[i - 2] + result[i - 1]);
+   }
+   return result;
 };
+
+
 
 console.log(fibonacciSeries1(3));
 console.log(fibonacciSeries1(5));
@@ -239,6 +280,7 @@ console.log(fibonacciSeries1(2));
 
 
 console.log('\n---------------TASK7---------------\n');
+
 
 /**
  * Requirement:
@@ -254,21 +296,28 @@ fibonacciSeries2(1) 	-> 0
  */
 
 
+// const fibonacciSeries2 = (n) => {
+//     if (n === 1) return 0;
+//     if (n === 2) return 1; 
+//     let a = 0; 
+//     let b = 1; 
+//     let number; 
+
+//     for (let i = 3; i <= n; i++) {
+//         number = a + b; 
+//         b = number; 
+//     }
+//     return number; 
+// };
 
 
 const fibonacciSeries2 = (n) => {
     if (n === 1) return 0;
-    if (n === 2) return 1; 
-    let a = 0; 
-    let b = 1; 
-    let number; 
-
-    for (let i = 3; i <= n; i++) {
-        number = a + b; 
-        b = number; 
-    }
-    return number; 
+    if (n === 2 || n === 3) return 1; 
+   return fibonacciSeries2(n - 1) + fibonacciSeries2(n - 2)
+ 
 };
+
 
 
 console.log(fibonacciSeries2(2));
@@ -298,26 +347,37 @@ findUniques([8, 9], [9, 8, 9]) 	-> []
 findUniques([-1, -2], [1, 2]) 	-> [-1, -2, 1, 2]
  */
 
-const findUniques = (arr1, arr2) => {
-    if (arr1.length === 0 && arr2.length === 0) return [];
+// const findUniques = (arr1, arr2) => {
+//     if (arr1.length === 0 && arr2.length === 0) return [];
 
-        let arr3 = arr1.concat(arr2);
-        let uniqueArr = [];
+//         let arr3 = arr1.concat(arr2);
+//         let uniqueArr = [];
 
-    for (let i = 0; i < arr3.length; i++) {
-            let count = 0;
+//     for (let i = 0; i < arr3.length; i++) {
+//             let count = 0;
    
-        for (let j = 0; j < arr3.length; j++) {
-             if (arr3[i] === arr3[j]) {
-                 count++; 
-         }    
-        }
-            if (count === 1) { 
-                 uniqueArr.push(arr3[i]);
-        }
-     }
-        return uniqueArr;
-}; 
+//         for (let j = 0; j < arr3.length; j++) {
+//              if (arr3[i] === arr3[j]) {
+//                  count++; 
+//          }    
+//         }
+//             if (count === 1) { 
+//                  uniqueArr.push(arr3[i]);
+//         }
+//      }
+//         return uniqueArr;
+// }; 
+
+const findUniques = (arr1, arr2) => {
+ const concatArr = arr1.concat(arr2);
+ return concatArr;
+
+ const filteredArr = concatArr.filter(ele => !(arr1.includes(ele) && arr2.includes(ele)))
+
+ const set = new Set(filteredArr);
+ return[...set]
+}
+
 
 console.log(findUniques([], []));
 console.log(findUniques([],[1, 2, 3, 2]));
@@ -348,12 +408,11 @@ isPowerOf3(9) 	-> true
  //keep dividing the number found by 3 in a loop. If we get 1 , number is power of 3.
 
 function isPowerOf3(num) {
-    if (num < 1) return false;
     while (num % 3 === 0) {
         num /= 3; 
     }
     return num === 1;
-}
+};
 
 
 console.log(isPowerOf3(1));
@@ -363,3 +422,37 @@ console.log(isPowerOf3(27));
 console.log(isPowerOf3(100));
 console.log(isPowerOf3(81));
 console.log(isPowerOf3(9));
+
+
+
+
+
+
+
+const averageOfEdges = (n1, n2, n3) => {
+    let min = Math.min(n1, n2, n3);
+    let max = Math.max(n1, n2, n3);
+    return (min + max) / 2;
+  }
+  console.log(averageOfEdges(0, 0, 6));
+  console.log(averageOfEdges(-2, -2, 10));
+  console.log(averageOfEdges(10, 13, 20));
+
+
+  //Write a function named as removeExtraSpaces() 
+  //which takes a string word as an argument and returns the string 
+  //back with all extra spaces removed when invoked.
+
+  const removeExtraSpaces = str => {
+      let arr = str.split(' ').filter((ele)=> {
+       
+       if( !ele === ' ') {
+        arr.push(ele);
+       }
+       
+       }) 
+      
+  }
+
+  
+  console.log(removeExtraSpaces('Hello   World    '))

@@ -78,7 +78,7 @@ const countVowelss = (word) => {
    let vowelCounter = 0;
    const vowels = ['A', 'E', 'I', 'O', 'U', 'a', 'e', 'i', 'o', 'u']
 
-   for(letter of word){
+   for(const letter of word){
        if(vowels.includes(letter)) vowelCounter++;
    }
    return vowelCounter;
@@ -241,6 +241,10 @@ const countMultipleWords = (arr) => {
    }
    return counter;
 }
+
+
+
+
 const countMultipleWords2 = (arr) => {
    let arrTrimmed = arr.map(x => x.trim());
    return (arrTrimmed.filter(x => x.indexOf(' ') !== -1)).length;
@@ -322,11 +326,6 @@ console.log(isPrime(-5));
 console.log(isPrime(0));
 console.log(isPrime(1));
 
-const isPrime = (num) => {
-   if(num < 2) return false;
-   if(num === 2 || num === 3) return true;
-   if(num % 2 === 0 || num % 3 === 0) return false;
-}
 
 console.log('\n---------------TASK11---------------\n');
 /*

@@ -395,20 +395,16 @@ firstDuplicate([ 1, 2, 3])			-> -1
 firstDuplicate([ 'foo', 'abc', '123', 'bar’ ]) 	-> -1
 
 */
-
-function firstDuplicate(array) {
-     let notDuplicate =[];
-
-      for(i = 0; i < array.length; i++){
-      if (notDuplicate.includes(array[i])){
-         return array[i];
+function firstDuplicate(arr){
+  for(let i = 0; i < arr.length; i++){
+      for(let j = i + 1; j < arr.length; j++){
+          if(arr[i] === arr[j]) return arr[i];
       }
-      else {
-      notDuplicate.push(array[i]);
-      } 
-    }  
-      return -1;
+  }
+  return -1;
 }
+
+
 
 console.log(firstDuplicate([ 5, 7, 7, 0, 5, 10 ])); // 7
 console.log(firstDuplicate([ 123, 'abc', '123', 3, 'abc' ])); // abc
@@ -417,27 +413,8 @@ console.log(firstDuplicate([ 'foo', 'abc', '123', 'bar' ])); // -1
 console.log(firstDuplicate([ 1, 2, 3, 4, ])); // -1
 
 
-// Bilal solution
-function getDuplicates(arr){
-  let dup = []
-  let container = []
-
-  for(let ele of arr){
-      if(!container.includes(ele)) container.push(ele)
-      else if(!dup.includes(ele)) dup.push(ele)
-  }
-  return dup;
-}
 
 
-function getDuplicates(arr){
-  let dup = []
-  for(let i = 0; i<=arr.length - 2; i++){
-
-      if(arr.includes(arr[i], i + 1) && !dup.includes(arr[i])) dup.push(arr[i])
-  }
-  return dup;
-}
 
 
 console.log('\n---------------TASK16---------------\n');
@@ -475,6 +452,17 @@ function getDuplicates(arr) {
    }
   return duplicates;
   }
+// Bilal solution
+function getDuplicates(arr){
+  let dup = []
+  let container = []
+
+  for(let ele of arr){
+      if(!container.includes(ele)) container.push(ele)
+      else if(!dup.includes(ele)) dup.push(ele)
+  }
+  return dup;
+}
 
 
 console.log(getDuplicates([ 0, -4, -7, 0, 5, 10, 45, -7, 0 ]));	
@@ -499,17 +487,17 @@ reverseStringWords("") 			-> ""
 reverseStringWords("    ") 		-> ""
 */
 function reverseStringWords(str){
-  let words = str.trim().split(' ')
+  let wordsArr = str.trim().split(' ')
 
-  for( let i = 0; i < words.length; i++){
-    words[i] = words[i].split('').reverse().join('')
+  for( let i = 0; i < wordsArr.length; i++){
+    wordsArr[i] = wordsArr[i].split('').reverse().join('')
   }
-return words.join(' ');
+return wordsArr.join(' ');
 }
 
 console.log(reverseStringWords("Hello World") );		// olleH dlroW
 console.log(reverseStringWords("I like JavaScript")); // I ekil tpircSavaJ
-console.log(reverseStringWords(""));		// ''
+console.log(reverseStringWords("hello"));		// ''
 console.log(reverseStringWords("    ")); //
 
 
@@ -690,6 +678,15 @@ console.log(fizzBuzz(13, 18));
 console.log(fizzBuzz(12, 5));
 console.log(fizzBuzz(5, 5));
 console.log(fizzBuzz(9, 6));
+
+
+
+
+
+
+
+
+
 
 
 
